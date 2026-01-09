@@ -124,44 +124,8 @@ export default function ReviewsSEO() {
   //   setHearts(generated);
   // }, []);
 
-  const reviewStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Kytwo",
-    url:
-      typeof window !== "undefined"
-        ? window.location.origin
-        : process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "5",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: reviews.map((review) => ({
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: review.name,
-      },
-      reviewBody: review.text,
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-      },
-    })),
-  };
-
   return (
     <section className=" w-full overflow-hidden flex flex-col items-center py-0 md:py-10 max-md:!pr-0">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(reviewStructuredData),
-        }}
-      />
       <div className=" container max-md:!pr-0 w-full flex flex-col md:flex-row gap-6 ">
         {/* Left Side */}
         <div className="relative w-full md:w-1/3 p-6 rounded-xl hidden md:block md:overflow-hidden overflow-visible">

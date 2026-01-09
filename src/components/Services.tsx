@@ -3,10 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Services() {
-  const baseUrl =
-    typeof window !== "undefined"
-      ? window.location.origin
-      : process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
   const serviceStructuredData = {
     "@context": "https://schema.org",
