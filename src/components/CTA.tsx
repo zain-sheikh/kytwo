@@ -11,8 +11,8 @@ export default function CTA() {
             </h2>
 
             <p className="text-gray-400 text-lg md:text-2xl max-w-2xl mb-10 text-center">
-              We don&#39;t just build websites; we build digital empires. Let's
-              turn your vision into a legacy.
+              We don&#39;t just build websites; we build digital empires.
+              Let&#39;s turn your vision into a legacy.
             </p>
 
             <a
