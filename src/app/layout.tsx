@@ -79,8 +79,8 @@ export const metadata: Metadata = {
     description:
       "7+ years of building scalable web, mobile, and custom software products for B2B brands. UI/UX design, web development, mobile apps, and more.",
     images: ["/og.png"],
-    creator: "@kytwo",
-    site: "@kytwo",
+    creator: "@kytwotech",
+    site: "@kytwotech",
   },
   alternates: {
     canonical: "/",
@@ -149,7 +149,10 @@ export default function RootLayout({
       "SaaS Development",
       "E-commerce Development",
     ],
-    sameAs: ["https://twitter.com/kytwo", "https://linkedin.com/company/kytwo"],
+    sameAs: [
+      "https://twitter.com/kytwotech",
+      "https://linkedin.com/company/kytwo",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       email: "hello@kytwo.com",

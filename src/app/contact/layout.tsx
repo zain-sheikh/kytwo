@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description:
       "Get in touch with our team. We respond within 24 hours and offer expert consultation for web, mobile, and eCommerce projects.",
     images: ["/og.png"],
-    creator: "@kytwo",
+    creator: "@kytwotech",
   },
   alternates: {
     canonical: "/contact",
@@ -77,7 +77,7 @@ export default function ContactLayout({
         areaServed: "Worldwide",
       },
       sameAs: [
-        "https://twitter.com/kytwo",
+        "https://twitter.com/kytwotech",
         "https://linkedin.com/company/kytwo",
       ],
     },
