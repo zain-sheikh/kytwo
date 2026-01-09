@@ -27,7 +27,7 @@ export default function ContactPage() {
               <ul className="space-y-2 mt-10">
                 {[
                   "We will respond to you within 24 hours.",
-                  "We'll sign an NDA if requested.",
+                  "We&#39;ll sign an NDA if requested.",
                   "Access to dedicated product specialists.",
                 ].map((text, i) => (
                   <li
@@ -93,7 +93,7 @@ export default function ContactPage() {
             >
               Within one business day, our team will review your details and
               reach out with next steps—usually to schedule a quick discovery
-              call so we can understand your goals, timelines, and whether we’re
+              call so we can understand your goals, timelines, and whether we&#39;re
               a good fit.
             </p>
           </div>
@@ -103,15 +103,15 @@ export default function ContactPage() {
             {[
               {
                 q: "Do you work under NDAs?",
-                a: "Yes. If required, we’ll sign your NDA before we dive into any sensitive details about your product or roadmap.",
+                a: "Yes. If required, we&#39;ll sign your NDA before we dive into any sensitive details about your product or roadmap.",
               },
               {
                 q: "What kind of projects do you take on?",
                 a: "We partner with startups and growing brands on web apps, SaaS products, dashboards, and marketing sites that need both design and development.",
               },
               {
-                q: "What’s your typical project timeline?",
-                a: "Most engagements start with a short discovery phase. From there, timelines depend on scope, but we’ll always give you clear milestones and updates.",
+                q: "What&#39;s your typical project timeline?",
+                a: "Most engagements start with a short discovery phase. From there, timelines depend on scope, but we&#39;ll always give you clear milestones and updates.",
               },
               {
                 q: "Can we start small and expand later?",
