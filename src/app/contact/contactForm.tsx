@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import { submitContact } from "./action";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Phone } from "lucide-react";
 
 export default function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContact, null);
@@ -119,12 +119,12 @@ export default function ContactForm() {
           {/* Static: Phone (Label doesn't move) */}
           <div className="relative border-b border-gray-300 pb-1 flex items-center gap-2 pt-2">
             <span className="text-gray-800 flex items-center gap-1 min-w-fit">
-              <span className="text-lg">🇺🇸</span> +1
+              +
             </span>
             <input
               type="tel"
               name="contact"
-              placeholder="201-555-0123"
+              placeholder="1-201-555-0123"
               className="w-full outline-none text-gray-800 bg-transparent placeholder-gray-400"
             />
           </div>
@@ -217,75 +217,7 @@ export default function ContactForm() {
             </button>
           </div>
         </div>
-        {/*<button type = "submit">SEND A MESSAGE</button>*/}
       </form>
     </>
   );
 }
-//
-// "use server";
-//
-// import {Send} from "lucide-react";
-//
-// export default function ContactForm() {
-//   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//
-//     const form = e.currentTarget;
-//     const portalId = process.env.PORTAL_ID!;
-//     const formId = process.env.FORM_ID!;
-//
-//     const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
-//
-//     const payload = {
-//       fields: [
-//         {
-//           name: "full_name",
-//           value: (form.elements.namedItem("name") as HTMLInputElement).value,
-//         },
-//         {
-//           name: "email",
-//           value: (form.elements.namedItem("email") as HTMLInputElement).value,
-//         },
-//         {
-//           name: "phone",
-//           value: (form.elements.namedItem("contact") as HTMLInputElement).value,
-//         },
-//         {
-//           name: "budget",
-//           value: (form.elements.namedItem("budget") as HTMLSelectElement).value,
-//         },
-//         {
-//           name: "about_project",
-//           value: (form.elements.namedItem("about") as HTMLTextAreaElement)
-//               .value,
-//         },
-//       ],
-//     };
-//
-//     const res = await fetch(
-//         endpoint,
-//         {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/json",
-//           },
-//           body: JSON.stringify(payload),
-//         }
-//     );
-//
-//     if (!res.ok) {
-//       const error = await res.text();
-//       console.error("HubSpot Error:", error);
-//       throw new Error("Submission failed");
-//     }
-//
-//     form.reset();
-//   };
-//
-//   return (
-//       <form className = "space-y-10 mt-4" onSubmit = {handleSubmit}>
-//
-//       </form>
-//   );
-// }
