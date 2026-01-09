@@ -8,7 +8,7 @@ const reviews = [
     id: 1,
     text: '"Kytwo" team did a great job. They was responsive, flexible, and worked through all requested changes to ensure we got what we needed. Happy with the final result!',
     name: "Amanda Abiassi",
-    image: "/reviews/amanda.png",
+    image: "/reviews/Amanda.png",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const reviews = [
     id: 5,
     text: "Kytwo agency transformed our online presence, our sales increased by 50% within weeks. Their attention to detail and strategic approach exceeded all expectations.",
     name: "Yaya Inv",
-    image: "/reviews/yaya.jpeg",
+    image: "/reviews/Yaya.jpeg",
   },
 ];
 
