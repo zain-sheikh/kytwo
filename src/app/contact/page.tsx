@@ -103,15 +103,15 @@ export default function ContactPage() {
             {[
               {
                 q: "Do you work under NDAs?",
-                a: "Yes. If required, we&#39;ll sign your NDA before we dive into any sensitive details about your product or roadmap.",
+                a: "Yes. If required, we'll sign your NDA before we dive into any sensitive details about your product or roadmap.",
               },
               {
                 q: "What kind of projects do you take on?",
                 a: "We partner with startups and growing brands on web apps, SaaS products, dashboards, and marketing sites that need both design and development.",
               },
               {
-                q: "What&#39;s your typical project timeline?",
-                a: "Most engagements start with a short discovery phase. From there, timelines depend on scope, but we&#39;ll always give you clear milestones and updates.",
+                q: "What's your typical project timeline?",
+                a: "Most engagements start with a short discovery phase. From there, timelines depend on scope, but we'll always give you clear milestones and updates.",
               },
               {
                 q: "Can we start small and expand later?",
