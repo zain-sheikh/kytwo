@@ -5,27 +5,30 @@ import Image from "next/image";
 const reviews = [
   {
     id: 1,
-    industry:"Market Place",
+    industry: "Market Place",
     flag: "🇺🇸",
-    details: "An 18% increase in overall conversions and 3x sales, after we did CRO (conversion rate optimization) ",
+    details:
+      "An 18% increase in overall conversions and 3x sales, after we did CRO (conversion rate optimization) ",
     // text: "Great experience working with Zain! The project was delivered on time.",
     name: "John jjj",
     image: "/portfolio/fatty15.png",
   },
   {
     id: 2,
-    industry:"AI Powered Dashboard",
+    industry: "AI Powered Dashboard",
     flag: "🇬🇧",
-    details: "AI Powered Dashboard used in-house for managing $14M worth of stocks and assets. Uses 14 public API to get data.",
+    details:
+      "AI Powered Dashboard used in-house for managing $14M worth of stocks and assets. Uses 14 public API to get data.",
     // text: "Amazing communication and clean code. Highly recommended!",
     name: "Sarah Lee",
     image: "/portfolio/tracker.png",
   },
   {
     id: 3,
-    industry:"Saas",
+    industry: "Saas",
     flag: "🇩🇪",
-    details: "Comprehensive B2B platform serving 10,000+ users with real-time collaboration features and advanced analytics.",
+    details:
+      "Comprehensive B2B platform serving 10,000+ users with real-time collaboration features and advanced analytics.",
 
     // text: "Professional and detail-oriented developer. Loved the final result!",
     name: "Michael Smith",
@@ -33,9 +36,10 @@ const reviews = [
   },
   {
     id: 4,
-    industry:"Market Place",
+    industry: "Market Place",
     flag: "🇺🇸",
-    details: "True sea make $550k+ sales each month with around 100,000 active subscriptions",
+    details:
+      "True sea make $550k+ sales each month with around 100,000 active subscriptions",
 
     // text: "Professional and detail-oriented developer. Loved the final result!",
     name: "Michael Smith",
@@ -97,7 +101,10 @@ export default function Showcase() {
   }, [current, withTransition]);
 
   return (
-    <section className="container flex flex-col items-center py-10 scroll-mt-20" id="showcase">
+    <section
+      className="container flex flex-col items-center py-10 scroll-mt-20"
+      id="showcase"
+    >
       <h2 className="relative left-0 right-0 z-10 font-semibold text-center justify-center !text-[clamp(1.7rem,7vw,5rem)] max-xs:!text-[2.5rem] mb-10 max-md:max-w-[70%] max-sm:max-w-[80%] max-md:mx-auto">
         WHERE GREAT IDEAS{" "}
         <span className="md:bg-[linear-gradient(to_right,_#9866f2_0%,_#eda1f5_35%,_#ffffff_85%)] md:bg-clip-text md:text-transparent md:whitespace-nowrap">
@@ -144,24 +151,26 @@ export default function Showcase() {
                   className="shrink-0 w-full items-stretch rounded-2xl md:rounded-4xl flex flex-row  text-black  md:p-12 p-3 bg-white"
                 >
                   <div className="bg-gray-200 flex-3 rounded-l-2xl p-5 md:p-10 ">
-                    <div className = "w-full flex gap-3 flex-col items-start justify-center ">
-
-                      <div className = "flex items-center gap-1 md:gap-3 text-gray-500 text-xs md:text-lg">
+                    <div className="w-full flex gap-3 flex-col items-start justify-center ">
+                      <div className="flex items-center gap-1 md:gap-3 text-gray-500 text-xs md:text-lg">
                         <span>{review.industry}</span>
                         <span>|</span>
                         <span>{review.flag}</span>
                       </div>
 
-                    <h3 className="font-bold uppercase "  style={{
-                      fontSize: "clamp(1.5rem, 3vw, 3rem)",
-                      lineHeight: "1.2",
-                    }}>
-                      {review.details}
-                    </h3>
-                    {/*<p className = "text-base mb-4 text-[clamp(0.8rem,2vw,1.5rem)] max-xs:font-normal max-xs:text-[1rem]">*/}
-                    {/*{review.text}*/}
-                    {/*</p>*/}
-                  </div>
+                      <h3
+                        className="font-bold uppercase "
+                        style={{
+                          fontSize: "clamp(1.5rem, 3vw, 3rem)",
+                          lineHeight: "1.2",
+                        }}
+                      >
+                        {review.details}
+                      </h3>
+                      {/*<p className = "text-base mb-4 text-[clamp(0.8rem,2vw,1.5rem)] max-xs:font-normal max-xs:text-[1rem]">*/}
+                      {/*{review.text}*/}
+                      {/*</p>*/}
+                    </div>
                   </div>
                   <div className="flex-4 ">
                     <Image
@@ -196,32 +205,57 @@ export default function Showcase() {
               ))}
             </div>
 
-            <div className="flex gap-4 ">
+            <div className="flex gap-4">
+              {/* PREV BUTTON (Rotated Arrow) */}
               <button
                 onClick={() => go(-1)}
-                className="border border-white bg-white text-black rounded-full aspect-square flex-1 flex w-12 md:w-15 lg:w-18 xl:w-20 items-center justify-center hover:bg-black hover:text-white"
-                aria-label="Previous project"
+                className="group border border-white rounded-full h-12 w-12 md:h-18 md:w-18 flex items-center justify-center hover:bg-white transition-all duration-300"
+                aria-label="Previous review"
               >
-                <Image
-                  src="/arrow.png"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="transform aspect-square p-3 lg:p-6 rotate-180 hover:invert"
-                />
+                <div className="relative w-5 h-5 md:w-8 md:h-8 overflow-hidden">
+                  {/* Existing Arrow: Slides out to the LEFT */}
+                  <Image
+                    src="/arrow.png"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="absolute inset-0 w-full h-full object-contain rotate-180 invert group-hover:invert-0 transition-transform duration-300 ease-in-out group-hover:-translate-x-full"
+                  />
+                  {/* New Arrow: Slides in from the RIGHT */}
+                  <Image
+                    src="/arrow.png"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="absolute inset-0 w-full h-full object-contain rotate-180 invert group-hover:invert-0 transition-transform duration-300 ease-in-out translate-x-full group-hover:translate-x-0"
+                  />
+                </div>
               </button>
+
+              {/* NEXT BUTTON (Normal Arrow) */}
               <button
                 onClick={() => go(1)}
-                className="border border-white bg-white text-black rounded-full aspect-square flex-1 flex w-12 md-w-15 lg:w-18 xl:w-20 items-center justify-center hover:bg-black hover:text-white"
-                aria-label="Next project"
+                className="group border border-white rounded-full h-12 w-12 md:h-18 md:w-18 flex items-center justify-center hover:bg-white transition-all duration-300"
+                aria-label="Next review"
               >
-                <Image
-                  src="/arrow.png"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="aspect-square  p-3 lg:p-6 hover:invert"
-                />
+                <div className="relative w-5 h-5 md:w-8 md:h-8 overflow-hidden">
+                  {/* Existing Arrow: Slides out Top-Right */}
+                  <Image
+                    src="/arrow.png"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="absolute inset-0 w-full h-full object-contain invert group-hover:invert-0 transition-transform duration-300 ease-in-out  group-hover:translate-x-full"
+                  />
+                  {/* New Arrow: Slides in from Bottom-Left */}
+                  <Image
+                    src="/arrow.png"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="absolute inset-0 w-full h-full object-contain invert group-hover:invert-0 transition-transform duration-300 ease-in-out -translate-x-full group-hover:translate-x-0 "
+                  />
+                </div>
               </button>
             </div>
           </div>

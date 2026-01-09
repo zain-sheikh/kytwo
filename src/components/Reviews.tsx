@@ -1,7 +1,6 @@
 // components/ReviewsSEO.tsx
 "use client";
 
-import { Star } from "lucide-react";
 import { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 const reviews = [
@@ -108,22 +107,22 @@ export default function ReviewsSEO() {
   const onPointerUp = () => finishDrag();
   const onPointerCancel = () => finishDrag();
   const onPointerLeave = () => finishDrag();
-  const [hearts, setHearts] = useState<
-    {
-      top: number;
-      left: number;
-      delay: number;
-    }[]
-  >([]);
+  // const [hearts, setHearts] = useState<
+  //   {
+  //     top: number;
+  //     left: number;
+  //     delay: number;
+  //   }[]
+  // >([]);
 
-  useLayoutEffect(() => {
-    const generated = Array.from({ length: 30 }).map((_, i) => ({
-      top: 10 + Math.random() * 40, // stays within 10%–90%
-      left: 10 + Math.random() * 70, // stays within 10%–90%
-      delay: i < 1 ? 0 : Math.random() * 3,
-    }));
-    setHearts(generated);
-  }, []);
+  // useLayoutEffect(() => {
+  //   const generated = Array.from({ length: 30 }).map((_, i) => ({
+  //     top: 10 + Math.random() * 40, // stays within 10%–90%
+  //     left: 10 + Math.random() * 70, // stays within 10%–90%
+  //     delay: i < 1 ? 0 : Math.random() * 3,
+  //   }));
+  //   setHearts(generated);
+  // }, []);
 
   const reviewStructuredData = {
     "@context": "https://schema.org",

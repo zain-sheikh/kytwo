@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Paperclip, Send } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import ContactForm from "./contactForm";
 
 export default function ContactPage() {
@@ -93,8 +93,8 @@ export default function ContactPage() {
             >
               Within one business day, our team will review your details and
               reach out with next steps—usually to schedule a quick discovery
-              call so we can understand your goals, timelines, and whether we&#39;re
-              a good fit.
+              call so we can understand your goals, timelines, and whether
+              we&#39;re a good fit.
             </p>
           </div>
 
