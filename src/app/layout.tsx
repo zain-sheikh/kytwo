@@ -20,45 +20,45 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com"
   ),
   title: {
-    default: "Kytwo — Design & Tech Agency Taking Brands to the Top 1%",
+    default: "Kytwo — Premium Ecommerce Development Agency | Online Store Experts",
     template: "%s | Kytwo",
   },
   description:
-    "Kytwo is a design and technology agency specializing in UI/UX design, web development, mobile apps, and custom software for B2B brands. With 7+ years of experience, we build high-performance digital products that drive growth. Services include web design, mobile app development, CMS development, ERP & CRM solutions, and conversion optimization.",
+    "Kytwo is a leading ecommerce development agency specializing in custom online stores, marketplace platforms, and ecommerce solutions. With 7+ years of experience, we build high-converting ecommerce websites that drive sales and revenue. Services include Shopify development, WooCommerce stores, custom ecommerce platforms, marketplace development, payment integration, inventory management, and ecommerce SEO optimization.",
   keywords: [
-    "web development agency",
-    "mobile app development agency",
-    "UI UX design agency",
-    "B2B web development",
-    "custom software development",
-    "web design agency",
-    "mobile app design",
-    "landing page design",
-    "branding agency",
-    "CMS development",
-    "ERP development",
-    "CRM development",
-    "Next.js development",
-    "React development",
-    "conversion rate optimization",
-    "CRO services",
-    "SaaS development",
-    "dashboard development",
-    "eCommerce development",
-    "digital product studio",
-    "startup development agency",
-    "B2B software development",
-    "web application development",
-    "responsive web design",
-    "SEO optimized websites",
+    "ecommerce development agency",
+    "online store development",
+    "ecommerce website development",
+    "Shopify development",
+    "WooCommerce development",
+    "custom ecommerce platform",
+    "marketplace development",
+    "ecommerce design",
+    "online store design",
+    "ecommerce SEO",
+    "ecommerce conversion optimization",
+    "payment gateway integration",
+    "inventory management system",
+    "B2B ecommerce development",
+    "B2C ecommerce development",
+    "multi-vendor marketplace",
+    "ecommerce mobile app",
+    "ecommerce consulting",
+    "ecommerce migration",
+    "ecommerce maintenance",
+    "cart abandonment solutions",
+    "product catalog management",
+    "ecommerce analytics",
+    "shopping cart development",
+    "ecommerce platform integration",
   ],
   authors: [{ name: "Kytwo" }],
   creator: "Kytwo",
   publisher: "Kytwo",
   openGraph: {
-    title: "Kytwo — Design & Tech Agency Taking Brands to the Top 1%",
+    title: "Kytwo — Premium Ecommerce Development Agency | Online Store Experts",
     description:
-      "We help ambitious B2B brands reach the top 1% through exceptional design and development. Specializing in web apps, mobile apps, SaaS products, and custom software. 7+ years of delivering high-performance digital products.",
+      "Leading ecommerce development agency building high-converting online stores and marketplace platforms. Specializing in Shopify, WooCommerce, custom ecommerce solutions, and marketplace development. 7+ years of delivering revenue-driving ecommerce websites.",
     url: "/",
     siteName: "Kytwo",
     images: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Kytwo — Design & Tech Agency Taking Brands to the Top 1%",
+        alt: "Kytwo — Premium Ecommerce Development Agency | Online Store Experts",
       },
     ],
     locale: "en_US",
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kytwo — Design & Tech Agency for Top 1% Brands",
+    title: "Kytwo — Premium Ecommerce Development Agency",
     description:
-      "7+ years of building scalable web, mobile, and custom software products for B2B brands. UI/UX design, web development, mobile apps, and more.",
+      "7+ years of building high-converting ecommerce stores, marketplace platforms, and online shopping experiences. Shopify, WooCommerce, custom ecommerce solutions, and more.",
     images: ["/og.png"],
     creator: "@kytwotech",
     site: "@kytwotech",
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
-  category: "Technology",
+  category: "Ecommerce Development",
 };
 
 export default function RootLayout({
@@ -119,7 +119,7 @@ export default function RootLayout({
     url: baseUrl,
     logo: `${baseUrl}/logo/logo-white.png`,
     description:
-      "Design and technology agency specializing in UI/UX design, web development, mobile apps, and custom software for B2B brands.",
+      "Leading ecommerce development agency specializing in custom online stores, marketplace platforms, Shopify development, WooCommerce stores, and ecommerce solutions that drive sales and revenue.",
     email: "hello@kytwo.com",
     foundingDate: "2017",
     numberOfEmployees: {
@@ -128,25 +128,33 @@ export default function RootLayout({
     },
     areaServed: "Worldwide",
     serviceType: [
-      "Web Development",
-      "Mobile App Development",
-      "UI/UX Design",
-      "Custom Software Development",
-      "CMS Development",
-      "ERP & CRM Development",
-      "Branding",
-      "Landing Page Design",
-      "Conversion Rate Optimization",
+      "Ecommerce Development",
+      "Online Store Development",
+      "Marketplace Development",
+      "Shopify Development",
+      "WooCommerce Development",
+      "Custom Ecommerce Platform",
+      "Ecommerce Design",
+      "Payment Gateway Integration",
+      "Ecommerce SEO",
+      "Ecommerce Conversion Optimization",
+      "Inventory Management",
+      "Multi-vendor Marketplace",
+      "Ecommerce Mobile App",
     ],
     knowsAbout: [
-      "Web Development",
-      "Mobile App Development",
-      "UI/UX Design",
+      "Ecommerce Development",
+      "Online Store Development",
+      "Marketplace Platforms",
+      "Shopify",
+      "WooCommerce",
+      "Ecommerce Design",
+      "Payment Integration",
+      "Ecommerce SEO",
       "React",
       "Next.js",
-      "B2B Software",
-      "SaaS Development",
-      "E-commerce Development",
+      "B2B Ecommerce",
+      "B2C Ecommerce",
     ],
     sameAs: [
       "https://twitter.com/kytwotech",
@@ -160,13 +168,33 @@ export default function RootLayout({
     },
   };
 
+  const storeSchema = {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    name: "Kytwo Ecommerce Development Services",
+    url: baseUrl,
+    description:
+      "Premium ecommerce development services including custom online stores, marketplace platforms, Shopify stores, WooCommerce websites, and ecommerce solutions.",
+    image: `${baseUrl}/logo/logo-white.png`,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "US",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "300",
+    },
+  };
+
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Kytwo",
     url: baseUrl,
     description:
-      "Design and technology agency taking B2B brands to the top 1% through exceptional web, mobile, and software development.",
+      "Premium ecommerce development agency building high-converting online stores and marketplace platforms. Specializing in Shopify, WooCommerce, and custom ecommerce solutions.",
     publisher: {
       "@type": "Organization",
       name: "Kytwo",
@@ -197,6 +225,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(storeSchema),
           }}
         />
         <SnowCanvas />

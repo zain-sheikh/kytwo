@@ -41,7 +41,7 @@ export default function ReviewsStructuredData() {
     url: baseUrl,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
+      ratingValue: "4.9",
       reviewCount: "5",
       bestRating: "5",
       worstRating: "1",

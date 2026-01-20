@@ -2,13 +2,75 @@ import { Globe, FileText, Settings, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Services() {
+interface ServicesProps {
+  ctaMessage?: string;
+}
+
+export default function Services({
+  ctaMessage = "Building ecommerce stores that convert visitors into customers and drive revenue.",
+}: ServicesProps) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+
+  const ecommercePlatforms = [
+    {
+      name: "Shopify Development",
+      href: "/services/shopify-development",
+      hasArrow: true,
+    },
+    {
+      name: "WooCommerce Development",
+      href: "/services/woocommerce-development",
+      hasArrow: true,
+    },
+    {
+      name: "Custom Ecommerce Platform",
+      href: "/services/custom-ecommerce-platform",
+      hasArrow: true,
+    },
+    {
+      name: "Marketplace Development",
+      href: "/services/marketplace-development",
+      hasArrow: true,
+    },
+    {
+      name: "Ecommerce Design",
+      href: "/services/ecommerce-design",
+      hasArrow: true,
+    },
+  ];
+
+  const ecommerceSolutions = [
+    {
+      name: "Payment Integration",
+      href: null,
+      hasArrow: false,
+    },
+    {
+      name: "Inventory Management",
+      href: null,
+      hasArrow: false,
+    },
+    {
+      name: "Ecommerce SEO",
+      href: null,
+      hasArrow: false,
+    },
+    {
+      name: "Ecommerce Mobile App",
+      href: null,
+      hasArrow: false,
+    },
+    {
+      name: "Conversion Optimization",
+      href: null,
+      hasArrow: false,
+    },
+  ];
 
   const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Design and Technology Agency Services",
+    serviceType: "Ecommerce Development Services",
     provider: {
       "@type": "Organization",
       name: "Kytwo",
@@ -17,90 +79,93 @@ export default function Services() {
     areaServed: "Worldwide",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Kytwo Services",
+      name: "Kytwo Ecommerce Services",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "UI/UX Design",
+            name: "Ecommerce Store Development",
             description:
-              "Professional user interface and user experience design services",
+              "Custom ecommerce website development and online store creation",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Web Design",
-            description: "Custom web design services for businesses",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Mobile App Design",
-            description: "Mobile application design services",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Landing Page Design",
-            description: "High-converting landing page design services",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Branding",
-            description: "Complete branding and identity design services",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Web Development",
-            description: "Custom web development and web application services",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Mobile App Development",
+            name: "Shopify Development",
             description:
-              "Native and cross-platform mobile application development",
+              "Professional Shopify store design and development services",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "CMS Development",
+            name: "WooCommerce Development",
             description:
-              "Content management system development and customization",
+              "WooCommerce store development and customization services",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Software Development",
-            description: "Custom software development services",
+            name: "Marketplace Development",
+            description: "Multi-vendor marketplace platform development",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "ERP & CRM Development",
+            name: "Ecommerce Design",
             description:
-              "Enterprise resource planning and customer relationship management system development",
+              "Professional ecommerce UI/UX design for online stores",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Payment Gateway Integration",
+            description:
+              "Secure payment processing integration for ecommerce stores",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Inventory Management",
+            description: "Ecommerce inventory management system development",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Ecommerce SEO",
+            description:
+              "Search engine optimization for ecommerce websites and product pages",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Ecommerce Mobile App",
+            description: "Mobile ecommerce app development for iOS and Android",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Ecommerce Conversion Optimization",
+            description:
+              "Conversion rate optimization services to increase ecommerce sales",
           },
         },
       ],
@@ -133,25 +198,28 @@ export default function Services() {
       </div>
 
       <h2 className="relative left-0 right-0  font-semibold text-center justify-center !text-[clamp(1.7rem,7vw,7rem)] max-xs:!text-[2.5rem] mb-10 max-md:max-w-[70%] max-sm:max-w-[80%] max-md:mx-auto">
-        WE TAKE BRANDS{" "}
+        BUILDING ECOMMERCE STORES THAT{" "}
         <span className="md:bg-[linear-gradient(to_right,_#9866f2_0%,_#eda1f5_35%,_#ffffff_85%)] md:bg-clip-text md:text-transparent md:whitespace-nowrap">
-          TO THE TOP 1%
+          DRIVE REVENUE
         </span>
       </h2>
       <div className="relative z-10 bg-[#dee2ff] rounded-[0.7rem] md:rounded-[2rem] text-black">
         <div className="grid  gap-4 md:gap-10 grid-cols-1 xs:grid-cols-2  py-3 md:py-6 md:gap-2 lg:py-10 px-3 md:px-6 lg:px-10 m-0">
           {/* Design Card LINK */}
-          <div className="group rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white ">
-            <div className="flex items-center gap-2 justify-between">
-              <h3 className="font-semibold text-center justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-[1.5rem]">
-                Design
+          <div className=" rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white ">
+            <Link
+              href="/services/ecommerce-platforms"
+              className="group flex items-center gap-2 justify-between"
+            >
+              <h3 className="font-semibold justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-[1.5rem]">
+                Ecommerce Platforms
               </h3>
               <div className="flex items-center gap-2">
                 <div className="relative flex items-center">
                   <div
                     className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
     w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
-    max-xs:w-[10vw] max-xs:h-[10vw]
+    max-xs:w-[10vw] max-xs:h-[10vw] aspect-square
     flex items-center justify-center transition-all duration-300
     -mr-[10%]"
                   >
@@ -165,7 +233,7 @@ export default function Services() {
 
                   <Image
                     src="/design.png"
-                    alt="UI/UX design and web design services icon"
+                    alt="Ecommerce platform development services icon"
                     width={80}
                     height={80}
                     className="w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
@@ -174,34 +242,61 @@ export default function Services() {
                   />
                 </div>
               </div>
-            </div>
+            </Link>
             <hr className="my-2 md:my-4 border-gray-400" />
             <ul
               className="font-semibold text-gray-800 text-[clamp(0.8rem,2vw,1.5rem)] max-xs:font-normal max-xs:text-[1rem]"
               style={{ lineHeight: "1.5" }}
             >
-              <li className="py-3 flex items-center gap-3">UI/UX Design</li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">Web Design</li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">
-                Mobile App Design
-              </li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">
-                Landing Page Design
-              </li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">Branding</li>
+              {ecommercePlatforms.map((service, index) => (
+                <li
+                  key={service.name}
+                  className="min-h-[5vw] md:min-h-[4vw] lg:min-h-[2vw]
+    max-xs:min-h-[10vw]"
+                >
+                  {index > 0 && <hr className="my-2 md:my-4 border-gray-400" />}
+                  {service.href ? (
+                    <Link
+                      href={service.href}
+                      className="py-3 group flex items-center justify-between gap-3  block"
+                    >
+                      <span>{service.name}</span>
+                      {service.hasArrow && (
+                        <div
+                          className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
+    w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[2vw] lg:h-[2vw]
+    max-xs:w-[10vw] max-xs:h-[10vw]
+    flex items-center justify-center transition-all duration-300
+    "
+                        >
+                          <div className="relative w-1/2 h-1/2 overflow-hidden">
+                            <div className="relative overflow-hidden w-full h-full ">
+                              <ArrowUpRight className="absolute inset-0 w-full h-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full group-hover:translate-x-full " />
+                              <ArrowUpRight className="absolute inset-0 w-full h-full -translate-x-full translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0 " />
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </Link>
+                  ) : (
+                    <div className="py-3 flex items-center gap-3">
+                      <span>{service.name}</span>
+                    </div>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Development Card LINK */}
 
-          <div className="group rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white">
-            <div className="flex  items-center gap-2 justify-between">
-              <h3 className="font-semibold text-center justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-[1.5rem]">
-                Development
+          <div className=" rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white">
+            <Link
+              href="/services/ecommerce-solutions"
+              className="group flex  items-center gap-2 justify-between"
+            >
+              <h3 className="font-semibold  justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-[1.5rem]">
+                Ecommerce Solutions
               </h3>
 
               <div className="flex items-center gap-2">
@@ -209,7 +304,7 @@ export default function Services() {
                   <div
                     className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
           w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
-          max-xs:w-[10vw] max-xs:h-[10vw]
+          max-xs:w-[10vw] max-xs:h-[10vw] aspect-square
           flex items-center justify-center transition-all duration-300
           -mr-[10%]"
                   >
@@ -223,7 +318,7 @@ export default function Services() {
 
                   <Image
                     src="/development.png"
-                    alt="Web development and mobile app development services icon"
+                    alt="Ecommerce solutions and integrations services icon"
                     width={80}
                     height={80}
                     className="w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
@@ -232,7 +327,7 @@ export default function Services() {
                   />
                 </div>
               </div>
-            </div>
+            </Link>
 
             <hr className="my-2 md:my-4 border-gray-400" />
 
@@ -240,21 +335,44 @@ export default function Services() {
               className="font-semibold text-gray-800 text-[clamp(0.8rem,2vw,1.5rem)] max-xs:font-normal max-xs:text-[1rem]"
               style={{ lineHeight: "1.5" }}
             >
-              <li className="py-3 flex items-center gap-3">Web Development</li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">
-                Mobile App Development
-              </li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">CMS Development</li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">
-                Software Development
-              </li>
-              <hr className="my-2 md:my-4 border-gray-400" />
-              <li className="py-3 flex items-center gap-3">
-                ERP & CRM Development
-              </li>
+              {ecommerceSolutions.map((service, index) => (
+                <li key={service.name}>
+                  {index > 0 && <hr className="my-2 md:my-4 border-gray-400" />}
+                  {service.href ? (
+                    <Link
+                      href={service.href}
+                      className="py-3 group flex items-center justify-between gap-3 hover:text-[#3719ca] transition-colors block"
+                    >
+                      <span>{service.name}</span>
+                      {service.hasArrow && (
+                        <div
+                          className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
+    w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[2vw] lg:h-[2vw]
+    max-xs:w-[10vw] max-xs:h-[10vw]
+    flex items-center justify-center transition-all duration-300
+    "
+                        >
+                          <div className="relative w-1/2 h-1/2 overflow-hidden">
+                            <div className="relative overflow-hidden w-full h-full ">
+                              <ArrowUpRight className="absolute inset-0 w-full h-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full group-hover:translate-x-full " />
+                              <ArrowUpRight className="absolute inset-0 w-full h-full -translate-x-full translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0 " />
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </Link>
+                  ) : (
+                    <div className="py-3 flex items-center gap-3 ">
+                      <span
+                        className="min-h-[5vw] md:min-h-[4vw] lg:min-h-[2vw] flex items-center justify-center
+    max-xs:min-h-[10vw]"
+                      >
+                        {service.name}
+                      </span>
+                    </div>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -281,7 +399,7 @@ export default function Services() {
               lineHeight: "1",
             }}
           >
-            Want bold design or rock-solid code? You’ll get both here.
+            {ctaMessage}
           </p>
         </div>
         <a

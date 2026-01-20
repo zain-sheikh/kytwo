@@ -106,9 +106,9 @@ export default function Showcase() {
       id="showcase"
     >
       <h2 className="relative left-0 right-0 z-10 font-semibold text-center justify-center !text-[clamp(1.7rem,7vw,5rem)] max-xs:!text-[2.5rem] mb-10 max-md:max-w-[70%] max-sm:max-w-[80%] max-md:mx-auto">
-        WHERE GREAT IDEAS{" "}
+        ECOMMERCE STORES THAT{" "}
         <span className="md:bg-[linear-gradient(to_right,_#9866f2_0%,_#eda1f5_35%,_#ffffff_85%)] md:bg-clip-text md:text-transparent md:whitespace-nowrap">
-          BECOME GREAT PRODUCTS
+          DRIVE REAL RESULTS
         </span>
       </h2>
       <style jsx>{`
@@ -175,7 +175,7 @@ export default function Showcase() {
                   <div className="flex-4 ">
                     <Image
                       src={review.image}
-                      alt={`${review.name} - ${review.industry} project showcase`}
+                      alt={`${review.name} - ${review.industry} ecommerce project showcase`}
                       width={800}
                       height={600}
                       className=" h-full w-full min-h-[300px] object-cover  rounded-r-2xl"

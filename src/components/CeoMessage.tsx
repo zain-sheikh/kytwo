@@ -29,9 +29,11 @@ export default function CeoMessage() {
               lineHeight: "1",
             }}
           >
-            Without a website, your business is invisible. Competitors with a
-            strong online presence can leave you behind overnight. Don’t be
-            Blockbuster—be Netflix. Adapt and go digital.
+            We help businesses turn their products into sales by building
+            high-performing ecommerce stores. Without an online store, your
+            products stay invisible while competitors grow faster with strong
+            ecommerce platforms. Don’t be Shop next door. Be Amazon. Build your
+            ecommerce store and start selling online.
           </p>
         </div>
       </div>

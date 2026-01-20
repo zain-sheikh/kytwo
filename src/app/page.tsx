@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <CeoMessage />
       <Logos />
-      <Services />
+      <Services ctaMessage="Building ecommerce stores that convert visitors into customers and drive revenue." />
       <Feedback />
       <Reviews />
       <Showcase />

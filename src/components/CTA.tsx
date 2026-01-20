@@ -6,13 +6,13 @@ export default function CTA() {
         <div className="grid gap-4 md:gap-10  py-5 md:py-20 md:gap-2 lg:py-30 px-3 md:px-6 lg:px-10 m-0">
           <div className="flex flex-col w-[100%] md:w-[80%] lg:w-[70%] mx-auto items-center justify-center text-center relative border border-gray-200 rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white">
             <h2 className="font-bold leading-[0.9] text-center mb-8 !text-[clamp(2.5rem,8vw,8rem)]">
-              READY TO HIT <br />
-              THE <span className="text-[#FDC448]">TOP 1%?</span>
+              READY TO BUILD YOUR <br />
+              <span className="text-[#FDC448]">ONLINE STORE?</span>
             </h2>
 
             <p className="text-gray-400 text-lg md:text-2xl max-w-2xl mb-10 text-center">
-              We don&#39;t just build websites; we build digital empires.
-              Let&#39;s turn your vision into a legacy.
+              We don&#39;t just build ecommerce stores; we build revenue-driving platforms.
+              Let&#39;s turn your products into sales.
             </p>
 
             <a

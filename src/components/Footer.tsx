@@ -1,5 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -11,12 +12,12 @@ export default function Footer() {
         {/* Links & Info Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 p-8 md:p-16">
           {/* Brand Column */}
-          <div className="md:col-span-7 flex flex-col justify-between space-y-8">
+          <div className="md:col-span-5 flex flex-col  space-y-8">
             <div className="flex items-center gap-3">
               {/* Using your logo placeholder */}
               <Image
                 src="/logo/logo-white.png"
-                alt="Kytwo logo - Design and technology agency"
+                alt="Kytwo logo - Ecommerce development agency"
                 width={64}
                 height={64}
                 className="w-12 h-12 md:w-16 md:h-16 object-contain "
@@ -27,8 +28,9 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-400 text-lg max-w-sm leading-relaxed">
-              The design & tech agency partnering with ambitious brands to
-              dominate their market.
+              Premium ecommerce development agency building high-converting
+              online stores and marketplace platforms that drive sales and
+              revenue.
             </p>
 
             {/* Socials */}
@@ -45,28 +47,68 @@ export default function Footer() {
             {/*</div>*/}
           </div>
 
-          {/* Links Column 1 */}
-          {/*<div className="md:col-span-3">*/}
-          {/*  <h4 className="font-bold text-xl mb-6 ">SERVICES</h4>*/}
-          {/*  <ul className="space-y-4 text-gray-300 text-lg">*/}
-          {/*    {[*/}
-          {/*      "UI/UX Design",*/}
-          {/*      "Web Development",*/}
-          {/*      "Mobile Apps",*/}
-          {/*      "Branding",*/}
-          {/*      "SaaS Development",*/}
-          {/*    ].map((item) => (*/}
-          {/*      <li key={item}>*/}
-          {/*        <a*/}
-          {/*          href="#"*/}
-          {/*          className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"*/}
-          {/*        >*/}
-          {/*          {item}*/}
-          {/*        </a>*/}
-          {/*      </li>*/}
-          {/*    ))}*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
+          {/* Services Links Column */}
+          <div className="md:col-span-3">
+            <h4 className="font-bold text-xl mb-6 ">SERVICES</h4>
+            <ul className="space-y-3 text-gray-300 text-lg">
+              <li>
+                <Link
+                  href="/services/shopify-development"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  Shopify development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/woocommerce-development"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  WooCommerce development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/custom-ecommerce-platform"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  Custom ecommerce platform development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/marketplace-development"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  Marketplace development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ecommerce-design"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  Ecommerce design
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/platform-migration"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  Platform migration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ecommerce-solutions"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  Ecommerce solutions
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           {/* Links Column 2 */}
           <div className="md:col-span-4">
@@ -88,9 +130,11 @@ export default function Footer() {
               <li className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 mt-1 " />
                 <span>
-                  3rd solar system planet,
+                  Pakistan, Lahore.
                   <br />
-                  Milkyway
+                  <span className="text-sm text-gray-500">
+                    Serving clients worldwide
+                  </span>
                 </span>
               </li>
             </ul>
