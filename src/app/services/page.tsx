@@ -8,10 +8,9 @@ import Services from "@/components/Services";
 import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
-  title:
-    "Ecommerce Services | Shopify, WooCommerce, Custom Platforms & Marketplaces",
+  title: "Ecommerce Services",
   description:
-    "Full-stack ecommerce services: Shopify development, WooCommerce, custom ecommerce platforms, marketplaces, ecommerce design, and growth-focused ecommerce solutions.",
+    "Ecommerce services across Shopify, WooCommerce, custom platforms, marketplaces, design, and growth-focused ecommerce solutions.",
   keywords: [
     "ecommerce development services",
     "shopify services",
@@ -25,10 +24,9 @@ export const metadata: Metadata = {
     "conversion optimization",
   ],
   openGraph: {
-    title:
-      "Ecommerce Services | Shopify, WooCommerce, Custom Platforms & Marketplaces",
+    title: "Ecommerce Services",
     description:
-      "End-to-end ecommerce services: platforms, marketplaces, design, and cross-platform ecommerce solutions.",
+      "End-to-end ecommerce services across platforms, marketplaces, design, and cross-platform solutions.",
     url: "/services",
     type: "website",
   },

@@ -11,10 +11,9 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
 
 export const metadata: Metadata = {
-  title:
-    "Ecommerce Platform Migration Services | Shopify, WooCommerce, Magento Migration",
+  title: "Ecommerce Platform Migration Services",
   description:
-    "Expert ecommerce platform migration services. Seamless migrations between Shopify, WooCommerce, Magento, BigCommerce, and custom platforms with zero downtime and SEO protection.",
+    "Ecommerce platform migration services between Shopify, WooCommerce, Magento, BigCommerce, and custom platforms with zero downtime and SEO protection.",
   keywords: [
     "ecommerce platform migration",
     "shopify migration services",

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Get in Touch",
+  title: "Contact Kytwo",
   description:
-    "Tell us about your project. We typically respond within one business day. Get access to dedicated product specialists, NDA protection, and expert consultation for your web, mobile, or eCommerce project.",
+    "Contact Kytwo to discuss your ecommerce project. We typically respond within one business day with expert guidance on next steps.",
   keywords: [
     "contact web development agency",
     "hire web developers",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     "software development consultation",
   ],
   openGraph: {
-    title: "Contact Kytwo — Let's Build Your Next Project",
+    title: "Contact Kytwo",
     description:
-      "Ready to take your brand to the top 1%? Get in touch with our team. We respond within 24 hours and offer dedicated product specialists for your web, mobile, or eCommerce project.",
+      "Get in touch with Kytwo. We respond within 24 hours with expert ecommerce advice and next steps.",
     url: "/contact",
     siteName: "Kytwo",
     images: [
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Kytwo — Let's Talk About Your Project",
+    title: "Contact Kytwo",
     description:
-      "Get in touch with our team. We respond within 24 hours and offer expert consultation for web, mobile, and eCommerce projects.",
+      "Get in touch with our team. We respond within 24 hours with expert ecommerce consultation.",
     images: ["/og.png"],
     creator: "@kytwotech",
   },

@@ -11,9 +11,9 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Design Services | High-Converting UI/UX for Online Stores",
+  title: "Ecommerce Design Services for high-converting stores",
   description:
-    "Ecommerce design agency crafting conversion-focused storefronts. Custom UI/UX, mobile-first layouts, product page design, and checkout optimization to increase sales and customer retention.",
+    "Ecommerce design services for high-converting storefronts, including UI/UX, mobile-first layouts, product pages, and checkout optimization.",
   keywords: [
     "ecommerce design services",
     "ecommerce ui ux design",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "hire ecommerce designers",
   ],
   openGraph: {
-    title: "Ecommerce Design Services | High-Converting Storefronts",
+    title: "Ecommerce Design Services",
     description:
-      "Conversion-focused ecommerce design: custom UI/UX, mobile-first layouts, product page design, and optimized checkouts that lift revenue.",
+      "Conversion-focused ecommerce design with custom UI/UX, mobile-first layouts, and optimized product and checkout flows.",
     url: "/services/ecommerce-design",
     type: "website",
   },

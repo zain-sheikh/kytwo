@@ -216,7 +216,7 @@ export default function Showcase() {
                   {/* Existing Arrow: Slides out to the LEFT */}
                   <Image
                     src="/arrow.png"
-                    alt=""
+                    alt="Previous project"
                     width={32}
                     height={32}
                     className="absolute inset-0 w-full h-full object-contain rotate-180 invert group-hover:invert-0 transition-transform duration-300 ease-in-out group-hover:-translate-x-full"
@@ -224,7 +224,7 @@ export default function Showcase() {
                   {/* New Arrow: Slides in from the RIGHT */}
                   <Image
                     src="/arrow.png"
-                    alt=""
+                    alt="Previous project hover state"
                     width={32}
                     height={32}
                     className="absolute inset-0 w-full h-full object-contain rotate-180 invert group-hover:invert-0 transition-transform duration-300 ease-in-out translate-x-full group-hover:translate-x-0"
@@ -242,7 +242,7 @@ export default function Showcase() {
                   {/* Existing Arrow: Slides out Top-Right */}
                   <Image
                     src="/arrow.png"
-                    alt=""
+                    alt="Next project"
                     width={32}
                     height={32}
                     className="absolute inset-0 w-full h-full object-contain invert group-hover:invert-0 transition-transform duration-300 ease-in-out  group-hover:translate-x-full"
@@ -250,7 +250,7 @@ export default function Showcase() {
                   {/* New Arrow: Slides in from Bottom-Left */}
                   <Image
                     src="/arrow.png"
-                    alt=""
+                    alt="Next project hover state"
                     width={32}
                     height={32}
                     className="absolute inset-0 w-full h-full object-contain invert group-hover:invert-0 transition-transform duration-300 ease-in-out -translate-x-full group-hover:translate-x-0 "

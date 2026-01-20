@@ -11,9 +11,9 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
 
 export const metadata: Metadata = {
-  title: "Custom Ecommerce Platform Development | Scalable Commerce Solutions",
+  title: "Custom Ecommerce Platform Development for scalable revenue",
   description:
-    "Custom ecommerce platform development tailored to complex business needs. Multi-storefront, headless commerce, integrations, and performance engineering to scale revenue.",
+    "Custom ecommerce platform development for complex businesses, including multi-storefront, headless commerce, and deep integrations.",
   keywords: [
     "custom ecommerce platform development",
     "headless ecommerce",
@@ -27,10 +27,9 @@ export const metadata: Metadata = {
     "high performance ecommerce",
   ],
   openGraph: {
-    title:
-      "Custom Ecommerce Platform Development | Scalable Commerce Solutions",
+    title: "Custom Ecommerce Platform Development",
     description:
-      "Build a custom ecommerce platform with headless architecture, robust integrations, and performance engineering to scale revenue.",
+      "Build a custom ecommerce platform with headless architecture, robust integrations, and performance engineering.",
     url: "/services/custom-ecommerce-platform",
     type: "website",
   },

@@ -11,9 +11,9 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
 
 export const metadata: Metadata = {
-  title: "Marketplace Development Services | Multi-Vendor Commerce Platforms",
+  title: "Marketplace Development Services for Multi-Vendor Commerce",
   description:
-    "Marketplace development for multi-vendor commerce: onboarding, vendor portals, payouts, commissions, and scalable marketplace architecture with secure transactions.",
+    "Marketplace development for multi-vendor commerce, including vendor onboarding, portals, payouts, commissions, and secure transactions.",
   keywords: [
     "marketplace development services",
     "multi vendor marketplace",

@@ -11,10 +11,9 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
 
 export const metadata: Metadata = {
-  title:
-    "Professional Shopify Development Services | Custom Shopify Store Design & Development",
+  title: "Shopify Development Services and Custom Design store",
   description:
-    "Expert Shopify development services to build high-converting online stores. Custom Shopify theme development, Shopify Plus migration, app integration, and conversion optimization. Get a professional Shopify store that drives sales and revenue.",
+    "Shopify development services to build high-converting online stores, from custom themes to Shopify Plus migrations and app integrations.",
   keywords: [
     "shopify development services",
     "shopify store development",
@@ -38,10 +37,9 @@ export const metadata: Metadata = {
     "shopify store redesign",
   ],
   openGraph: {
-    title:
-      "Professional Shopify Development Services | Custom Shopify Store Design",
+    title: "Shopify Development Services",
     description:
-      "Expert Shopify development services to build high-converting online stores. Custom themes, Shopify Plus migration, and conversion optimization.",
+      "Shopify development services for custom themes, Shopify Plus migrations, and high-converting ecommerce stores.",
     url: "/services/shopify-development",
     type: "website",
   },

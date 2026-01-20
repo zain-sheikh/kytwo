@@ -118,7 +118,7 @@ export default function Header() {
           >
             <Image
               src="/logo/logo-white.png"
-              alt="Kytwo - Ecommerce Development Agency"
+              alt="Kytwo ecommerce development agency logo"
               width={80}
               height={30}
               className="w-15 h-auto -translate-y-2"

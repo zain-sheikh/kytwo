@@ -148,7 +148,7 @@ export default function ReviewsSEO() {
               4.9{" "}
               <Image
                 src="/star.png"
-                alt=""
+                alt="Star rating icon"
                 width={36}
                 height={36}
                 className="inline-block align-middle"
@@ -271,7 +271,7 @@ export default function ReviewsSEO() {
                           <Image
                             key={i}
                             src="/star.png"
-                            alt=""
+                            alt="5-star client rating"
                             width={16}
                             height={16}
                             className="inline-block align-middle star-anim"

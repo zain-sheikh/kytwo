@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SnowCanvas from "@/components/Snow";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com"
   ),
   title: {
-    default: "Kytwo — Premium Ecommerce Development Agency | Online Store Experts",
+    default: "Kytwo — Ecommerce Development Agency",
     template: "%s | Kytwo",
   },
   description:
-    "Kytwo is a leading ecommerce development agency specializing in custom online stores, marketplace platforms, and ecommerce solutions. With 7+ years of experience, we build high-converting ecommerce websites that drive sales and revenue. Services include Shopify development, WooCommerce stores, custom ecommerce platforms, marketplace development, payment integration, inventory management, and ecommerce SEO optimization.",
+    "Kytwo is an ecommerce development agency that builds high‑converting online stores and marketplace platforms using Shopify, WooCommerce, and custom ecommerce solutions.",
   keywords: [
     "ecommerce development agency",
     "online store development",
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   creator: "Kytwo",
   publisher: "Kytwo",
   openGraph: {
-    title: "Kytwo — Premium Ecommerce Development Agency | Online Store Experts",
+    title: "Kytwo — Ecommerce Development Agency",
     description:
-      "Leading ecommerce development agency building high-converting online stores and marketplace platforms. Specializing in Shopify, WooCommerce, custom ecommerce solutions, and marketplace development. 7+ years of delivering revenue-driving ecommerce websites.",
+      "Ecommerce development agency building high-converting online stores and marketplace platforms with Shopify, WooCommerce, and custom ecommerce solutions.",
     url: "/",
     siteName: "Kytwo",
     images: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Kytwo — Premium Ecommerce Development Agency | Online Store Experts",
+        alt: "Kytwo ecommerce development agency",
       },
     ],
     locale: "en_US",

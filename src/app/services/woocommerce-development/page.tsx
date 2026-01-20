@@ -11,10 +11,9 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
 
 export const metadata: Metadata = {
-  title:
-    "Professional WooCommerce Development Services | Custom WooCommerce Store Design & Development",
+  title: "WooCommerce Development Services and Custom Design",
   description:
-    "Expert WooCommerce development services to build high-converting online stores. Custom WooCommerce theme development, plugin integration, payment gateway setup, and conversion optimization. Get a professional WooCommerce store that drives sales and revenue.",
+    "WooCommerce development services for high-converting online stores, including custom themes, plugins, integrations, and payment setup.",
   keywords: [
     "woocommerce development services",
     "woocommerce store development",
@@ -35,10 +34,9 @@ export const metadata: Metadata = {
     "woocommerce store redesign",
   ],
   openGraph: {
-    title:
-      "Professional WooCommerce Development Services | Custom WooCommerce Store Design",
+    title: "WooCommerce Development Services",
     description:
-      "Expert WooCommerce development services to build high-converting online stores. Custom themes, plugin integration, and conversion optimization.",
+      "WooCommerce development services for custom themes, plugins, and conversion-focused ecommerce stores.",
     url: "/services/woocommerce-development",
     type: "website",
   },

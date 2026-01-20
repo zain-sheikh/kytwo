@@ -10,9 +10,9 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Platforms | Shopify, WooCommerce, Custom & Marketplaces",
+  title: "Ecommerce Platform Services for brands",
   description:
-    "Ecommerce platform services for Shopify, WooCommerce, custom ecommerce platforms, and marketplaces. Strategy, design, development, migrations, and optimization for high-converting stores.",
+    "Ecommerce platform services for Shopify, WooCommerce, custom platforms, and marketplaces, covering strategy, builds, migrations, and optimization.",
   keywords: [
     "ecommerce platforms",
     "shopify development services",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     "ecommerce platform migration",
   ],
   openGraph: {
-    title: "Ecommerce Platforms | Shopify, WooCommerce, Custom & Marketplaces",
+    title: "Ecommerce Platform Services",
     description:
-      "Shopify, WooCommerce, custom ecommerce platforms, and marketplace development for brands that are serious about ecommerce growth.",
+      "Shopify, WooCommerce, custom ecommerce platforms, and marketplace development for growth-focused brands.",
     url: "/services/ecommerce-platforms",
     type: "website",
   },

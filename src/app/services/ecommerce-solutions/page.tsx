@@ -11,9 +11,9 @@ import CTABar from "@/components/CTABar";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Solutions | Payments, Inventory, SEO, Mobile & CRO",
+  title: "Ecommerce Solutions for Growth-Focused Brands",
   description:
-    "Ecommerce solutions that improve payments, inventory, SEO, mobile experiences, and conversion optimization for modern online stores on Shopify, WooCommerce, and custom platforms.",
+    "Ecommerce solutions that improve payments, inventory, SEO, mobile experiences, and conversion rates on Shopify, WooCommerce, and custom platforms.",
   keywords: [
     "ecommerce solutions",
     "payment integration services",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     "ecommerce growth services",
   ],
   openGraph: {
-    title: "Ecommerce Solutions | Payments, Inventory, SEO, Mobile & CRO",
+    title: "Ecommerce Solutions",
     description:
-      "Cross-platform ecommerce solutions including payment integrations, inventory operations, SEO, mobile experience, and conversion rate optimization.",
+      "Cross-platform ecommerce solutions for payments, inventory, SEO, mobile experiences, and conversion rate optimization.",
     url: "/services/ecommerce-solutions",
     type: "website",
   },
