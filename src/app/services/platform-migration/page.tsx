@@ -9,6 +9,11 @@ import ServiceOfferings from "@/components/ServiceOfferings";
 import ServiceOverview from "@/components/ServiceOverview";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Ecommerce Platform Migration Services",
@@ -35,7 +40,7 @@ export const metadata: Metadata = {
     title: "Ecommerce Platform Migration Services | Zero-Downtime Migrations",
     description:
       "Expert ecommerce platform migrations between Shopify, WooCommerce, Magento, and custom platforms with SEO protection and zero downtime.",
-    url: "/services/platform-migration",
+    url: `${siteUrl}/services/platform-migration`,
     type: "website",
   },
   alternates: {
@@ -45,6 +50,45 @@ export const metadata: Metadata = {
 
 export default function PlatformMigrationPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+  const featuredQuestion =
+    "How long does an ecommerce platform migration take?";
+  const featuredAnswer =
+    "Migration timelines depend on catalog size, data complexity, and integrations. Simple migrations can take 4-8 weeks; complex migrations with custom data and deep integrations typically take 8-16 weeks. We provide a detailed timeline after discovery.";
+  const faqItems = [
+    {
+      q: "Can you migrate from Magento to Shopify or WooCommerce?",
+      a: "Yes. We specialize in Magento to Shopify, Magento to WooCommerce, and other platform transitions. We handle product data, customer accounts, order history, and ensure SEO protection throughout.",
+    },
+    {
+      q: "Will my SEO rankings be affected during migration?",
+      a: "We prioritize SEO protection. We implement 301 redirects, preserve URL structures where possible, set up canonical tags, validate structured data, and monitor search performance to minimize ranking impact.",
+    },
+    {
+      q: "Can you migrate without downtime?",
+      a: "Yes. We use phased cutovers, parallel testing environments, and strategic launch windows to minimize downtime. Most migrations have minimal or zero downtime during the transition.",
+    },
+    {
+      q: "What data can you migrate?",
+      a: "We migrate products, variants, SKUs, customers, orders, reviews, ratings, categories, content pages, blog posts, and custom fields. We also handle product images, media, and metadata.",
+    },
+    {
+      q: "Do you handle payment and shipping integrations?",
+      a: "Yes. We reconfigure payment gateways (Stripe, PayPal, etc.), shipping providers, tax systems, and ensure all integrations work correctly on the new platform.",
+    },
+    {
+      q: "What happens to my existing URLs?",
+      a: "We create a comprehensive URL mapping strategy. Where possible, we preserve URLs; when changes are needed, we implement 301 redirects to maintain SEO value and user experience.",
+    },
+    {
+      q: "Do you provide post-migration support?",
+      a: "Yes. We offer post-launch monitoring, bug fixes, performance optimization, team training, and ongoing support to ensure a smooth transition and successful operation.",
+    },
+    {
+      q: "How much does platform migration cost?",
+      a: "Pricing depends on catalog size, data complexity, integrations, and platform complexity. Simple migrations start around $5k-$10k; complex enterprise migrations range from $15k-$50k+. We provide detailed estimates after discovery.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -104,6 +148,21 @@ export default function PlatformMigrationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
+        }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "Platform migration" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 
@@ -224,47 +283,36 @@ export default function PlatformMigrationPage() {
           },
         ]}
       />
-
       <ServiceCTA message="Ready to migrate to a better ecommerce platform? Let's plan a seamless transition." />
+
+      <RelatedServices
+        services={[
+          {
+            title: "Ecommerce Platforms",
+            description:
+              "Strategy and implementation across Shopify, WooCommerce, custom platforms, and marketplaces.",
+            href: "/services/ecommerce-platforms",
+          },
+          {
+            title: "Custom Ecommerce Platform",
+            description:
+              "Headless and custom commerce builds for teams that have outgrown off-the-shelf platforms.",
+            href: "/services/custom-ecommerce-platform",
+          },
+          {
+            title: "Ecommerce Solutions",
+            description:
+              "Post-migration SEO, performance, and CRO programs to grow revenue on the new platform.",
+            href: "/services/ecommerce-solutions",
+          },
+        ]}
+      />
 
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="How long does an ecommerce platform migration take?"
-          featuredAnswer="Migration timelines depend on catalog size, data complexity, and integrations. Simple migrations can take 4-8 weeks; complex migrations with custom data and deep integrations typically take 8-16 weeks. We provide a detailed timeline after discovery."
-          faqItems={[
-            {
-              q: "Can you migrate from Magento to Shopify or WooCommerce?",
-              a: "Yes. We specialize in Magento to Shopify, Magento to WooCommerce, and other platform transitions. We handle product data, customer accounts, order history, and ensure SEO protection throughout.",
-            },
-            {
-              q: "Will my SEO rankings be affected during migration?",
-              a: "We prioritize SEO protection. We implement 301 redirects, preserve URL structures where possible, set up canonical tags, validate structured data, and monitor search performance to minimize ranking impact.",
-            },
-            {
-              q: "Can you migrate without downtime?",
-              a: "Yes. We use phased cutovers, parallel testing environments, and strategic launch windows to minimize downtime. Most migrations have minimal or zero downtime during the transition.",
-            },
-            {
-              q: "What data can you migrate?",
-              a: "We migrate products, variants, SKUs, customers, orders, reviews, ratings, categories, content pages, blog posts, and custom fields. We also handle product images, media, and metadata.",
-            },
-            {
-              q: "Do you handle payment and shipping integrations?",
-              a: "Yes. We reconfigure payment gateways (Stripe, PayPal, etc.), shipping providers, tax systems, and ensure all integrations work correctly on the new platform.",
-            },
-            {
-              q: "What happens to my existing URLs?",
-              a: "We create a comprehensive URL mapping strategy. Where possible, we preserve URLs; when changes are needed, we implement 301 redirects to maintain SEO value and user experience.",
-            },
-            {
-              q: "Do you provide post-migration support?",
-              a: "Yes. We offer post-launch monitoring, bug fixes, performance optimization, team training, and ongoing support to ensure a smooth transition and successful operation.",
-            },
-            {
-              q: "How much does platform migration cost?",
-              a: "Pricing depends on catalog size, data complexity, integrations, and platform complexity. Simple migrations start around $5k-$10k; complex enterprise migrations range from $15k-$50k+. We provide detailed estimates after discovery.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
 

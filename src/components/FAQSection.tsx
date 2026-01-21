@@ -1,11 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-interface FAQItem {
-  q: string;
-  a: string;
-}
+import type { FAQItem } from "@/lib/faqSchema";
 
 interface FAQSectionProps {
   featuredQuestion: string;
@@ -20,38 +16,8 @@ export default function FAQSection({
 }: FAQSectionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  // Create FAQPage schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: featuredQuestion,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: featuredAnswer,
-        },
-      },
-      ...faqItems.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.a,
-        },
-      })),
-    ],
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
       <div className="mt-16">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Featured FAQ on the left */}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+
 export const metadata: Metadata = {
   title: "Contact Kytwo",
   description:
@@ -20,11 +22,11 @@ export const metadata: Metadata = {
     title: "Contact Kytwo",
     description:
       "Get in touch with Kytwo. We respond within 24 hours with expert ecommerce advice and next steps.",
-    url: "/contact",
+    url: `${siteUrl}/contact`,
     siteName: "Kytwo",
     images: [
       {
-        url: "/og.png",
+        url: `${siteUrl}/og.png`,
         width: 1200,
         height: 630,
         alt: "Contact Kytwo — Let's Build Your Next Project",
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     title: "Contact Kytwo",
     description:
       "Get in touch with our team. We respond within 24 hours with expert ecommerce consultation.",
-    images: ["/og.png"],
+    images: [`${siteUrl}/og.png`],
     creator: "@kytwotech",
   },
   alternates: {

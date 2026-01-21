@@ -9,6 +9,11 @@ import ServiceOfferings from "@/components/ServiceOfferings";
 import ServiceOverview from "@/components/ServiceOverview";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Custom Ecommerce Platform Development for scalable revenue",
@@ -30,7 +35,7 @@ export const metadata: Metadata = {
     title: "Custom Ecommerce Platform Development",
     description:
       "Build a custom ecommerce platform with headless architecture, robust integrations, and performance engineering.",
-    url: "/services/custom-ecommerce-platform",
+    url: `${siteUrl}/services/custom-ecommerce-platform`,
     type: "website",
   },
   alternates: {
@@ -40,6 +45,41 @@ export const metadata: Metadata = {
 
 export default function CustomEcommercePlatformPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+  const featuredQuestion =
+    "When is a custom ecommerce platform the right choice?";
+  const featuredAnswer =
+    "When off-the-shelf platforms limit your growth: complex catalogs, multi-storefront needs, B2B pricing rules, or deep integrations. A custom platform gives you performance, flexibility, and control to scale revenue.";
+  const faqItems = [
+    {
+      q: "Do you support headless architectures?",
+      a: "Yes. We build headless, API-first solutions that power fast web and mobile experiences using modern frameworks and composable services.",
+    },
+    {
+      q: "Can you integrate with our ERP/CRM/OMS?",
+      a: "Absolutely. We design robust data flows and integrations with ERP, CRM, OMS, PIM, WMS, payments, tax, and shipping providers to keep operations in sync.",
+    },
+    {
+      q: "How do you ensure performance and SEO?",
+      a: "We engineer for Core Web Vitals, use CDN/edge caching, optimize media, implement structured data, and monitor performance continuously.",
+    },
+    {
+      q: "Do you handle security and compliance?",
+      a: "Yes. We implement secure authentication, role-based access, audit logging, and PCI-aware payment flows, aligned with your compliance requirements.",
+    },
+    {
+      q: "What’s the typical timeline?",
+      a: "Timelines depend on scope. Architecture and MVP can run 8-12 weeks; full rollouts with complex integrations typically run 12-20+ weeks. We provide a tailored plan after discovery.",
+    },
+    {
+      q: "Can you migrate from our current platform?",
+      a: "Yes. We plan data migration (products, customers, orders), redirect strategies, and phased cutovers to minimize downtime and protect SEO.",
+    },
+    {
+      q: "What does a custom platform cost?",
+      a: "Pricing depends on integrations, feature depth, and performance targets. Typical engagements range from $30k+ for focused builds to enterprise programs with phased delivery. We’ll scope and estimate after discovery.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -99,6 +139,21 @@ export default function CustomEcommercePlatformPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
+        }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "Custom ecommerce platform" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 
@@ -221,41 +276,33 @@ export default function CustomEcommercePlatformPage() {
       />
 
       <ServiceCTA message="Ready to build a custom ecommerce platform that scales?" />
-
+      <RelatedServices
+        services={[
+          {
+            title: "Ecommerce Platforms",
+            description:
+              "Compare custom builds with Shopify, WooCommerce, and other platform options.",
+            href: "/services/ecommerce-platforms",
+          },
+          {
+            title: "Ecommerce Platform Migration",
+            description:
+              "Plan the migration path from your current stack into a new custom platform.",
+            href: "/services/platform-migration",
+          },
+          {
+            title: "Ecommerce Solutions",
+            description:
+              "Layer CRO, analytics, and SEO work on top of your new custom platform.",
+            href: "/services/ecommerce-solutions",
+          },
+        ]}
+      />
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="When is a custom ecommerce platform the right choice?"
-          featuredAnswer="When off-the-shelf platforms limit your growth: complex catalogs, multi-storefront needs, B2B pricing rules, or deep integrations. A custom platform gives you performance, flexibility, and control to scale revenue."
-          faqItems={[
-            {
-              q: "Do you support headless architectures?",
-              a: "Yes. We build headless, API-first solutions that power fast web and mobile experiences using modern frameworks and composable services.",
-            },
-            {
-              q: "Can you integrate with our ERP/CRM/OMS?",
-              a: "Absolutely. We design robust data flows and integrations with ERP, CRM, OMS, PIM, WMS, payments, tax, and shipping providers to keep operations in sync.",
-            },
-            {
-              q: "How do you ensure performance and SEO?",
-              a: "We engineer for Core Web Vitals, use CDN/edge caching, optimize media, implement structured data, and monitor performance continuously.",
-            },
-            {
-              q: "Do you handle security and compliance?",
-              a: "Yes. We implement secure authentication, role-based access, audit logging, and PCI-aware payment flows, aligned with your compliance requirements.",
-            },
-            {
-              q: "What’s the typical timeline?",
-              a: "Timelines depend on scope. Architecture and MVP can run 8-12 weeks; full rollouts with complex integrations typically run 12-20+ weeks. We provide a tailored plan after discovery.",
-            },
-            {
-              q: "Can you migrate from our current platform?",
-              a: "Yes. We plan data migration (products, customers, orders), redirect strategies, and phased cutovers to minimize downtime and protect SEO.",
-            },
-            {
-              q: "What does a custom platform cost?",
-              a: "Pricing depends on integrations, feature depth, and performance targets. Typical engagements range from $30k+ for focused builds to enterprise programs with phased delivery. We’ll scope and estimate after discovery.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
 

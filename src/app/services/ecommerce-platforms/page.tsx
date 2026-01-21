@@ -8,6 +8,11 @@ import ServiceOverview from "@/components/ServiceOverview";
 import ServiceCTA from "@/components/ServiceCTA";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Ecommerce Platform Services for brands",
@@ -26,7 +31,7 @@ export const metadata: Metadata = {
     title: "Ecommerce Platform Services",
     description:
       "Shopify, WooCommerce, custom ecommerce platforms, and marketplace development for growth-focused brands.",
-    url: "/services/ecommerce-platforms",
+    url: `${siteUrl}/services/ecommerce-platforms`,
     type: "website",
   },
   alternates: {
@@ -117,8 +122,58 @@ const platformOfferings = [
 ];
 
 export default function EcommercePlatformsPage() {
+  const featuredQuestion =
+    "How do I choose between Shopify, WooCommerce, and a custom ecommerce platform?";
+  const featuredAnswer =
+    "It comes down to your catalog complexity, integrations, and growth goals. Shopify is fast to launch and strong for DTC; WooCommerce is ideal in WordPress ecosystems; custom/headless platforms fit complex B2B rules, multi-storefront needs, or deep ERP/OMS integrations.";
+  const faqItems = [
+    {
+      q: "Do you build on Shopify and Shopify Plus?",
+      a: "Yes. We build custom themes, Shopify Plus storefronts, app integrations, and performance/CRO improvements with a focus on conversion and maintainability.",
+    },
+    {
+      q: "Do you develop WooCommerce stores and custom plugins?",
+      a: "Yes. We build and optimize WooCommerce stores, develop custom WordPress/WooCommerce functionality, and integrate payments, shipping, tax, and third-party tools.",
+    },
+    {
+      q: "When does headless or custom commerce make sense?",
+      a: "Headless or custom commerce is a good fit when you need advanced catalog logic, B2B pricing, multi-region storefronts, unique checkout flows, or enterprise integrations that off-the-shelf platforms can’t support cleanly.",
+    },
+    {
+      q: "Can you migrate from Magento, Shopify, or WooCommerce?",
+      a: "Yes. We plan migrations end-to-end: data mapping for products/customers/orders, redirect strategy, SEO protection, QA, and phased cutovers to minimize downtime.",
+    },
+    {
+      q: "Will you preserve SEO during a platform migration?",
+      a: "Yes. We prioritize SEO-safe replatforming: maintain URL structures where possible, implement 301 redirects, validate canonical tags, and ensure structured data is correct on PDPs/PLPs.",
+    },
+    {
+      q: "Do you optimize performance and Core Web Vitals?",
+      a: "Yes. We improve LCP/INP/CLS through code and asset optimization, caching/CDN strategy, image handling, and platform-specific best practices.",
+    },
+    {
+      q: "How long does it take to launch a new ecommerce platform?",
+      a: "Timelines depend on scope and integrations. A focused Shopify/WooCommerce build can take 4–8 weeks; migrations and custom/headless programs typically run 10–20+ weeks.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "Ecommerce platforms" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+
       <ServiceHero
         title="ECOMMERCE PLATFORMS WE"
         highlightText="DESIGN, BUILD & SCALE"
@@ -152,45 +207,38 @@ export default function EcommercePlatformsPage() {
         highlightText="ECOMMERCE PLATFORMS"
         offerings={platformOfferings}
       />
+      <ServiceCTA message="Need help choosing between Shopify, WooCommerce, or a custom platform? Let’s map the right path for your ecommerce stack." />
+
+      <RelatedServices
+        services={[
+          {
+            title: "Ecommerce Platform Migration",
+            description:
+              "Plan replatforming projects that keep SEO, performance, and revenue protected.",
+            href: "/services/platform-migration",
+          },
+          {
+            title: "Custom Ecommerce Platform",
+            description:
+              "When Shopify or WooCommerce are no longer enough, build the custom commerce layer you need.",
+            href: "/services/custom-ecommerce-platform",
+          },
+          {
+            title: "Ecommerce Solutions",
+            description:
+              "Targeted improvements to payments, inventory, SEO, and CRO on whatever platform you choose.",
+            href: "/services/ecommerce-solutions",
+          },
+        ]}
+      />
 
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="How do I choose between Shopify, WooCommerce, and a custom ecommerce platform?"
-          featuredAnswer="It comes down to your catalog complexity, integrations, and growth goals. Shopify is fast to launch and strong for DTC; WooCommerce is ideal in WordPress ecosystems; custom/headless platforms fit complex B2B rules, multi-storefront needs, or deep ERP/OMS integrations."
-          faqItems={[
-            {
-              q: "Do you build on Shopify and Shopify Plus?",
-              a: "Yes. We build custom themes, Shopify Plus storefronts, app integrations, and performance/CRO improvements with a focus on conversion and maintainability.",
-            },
-            {
-              q: "Do you develop WooCommerce stores and custom plugins?",
-              a: "Yes. We build and optimize WooCommerce stores, develop custom WordPress/WooCommerce functionality, and integrate payments, shipping, tax, and third-party tools.",
-            },
-            {
-              q: "When does headless or custom commerce make sense?",
-              a: "Headless or custom commerce is a good fit when you need advanced catalog logic, B2B pricing, multi-region storefronts, unique checkout flows, or enterprise integrations that off-the-shelf platforms can’t support cleanly.",
-            },
-            {
-              q: "Can you migrate from Magento, Shopify, or WooCommerce?",
-              a: "Yes. We plan migrations end-to-end: data mapping for products/customers/orders, redirect strategy, SEO protection, QA, and phased cutovers to minimize downtime.",
-            },
-            {
-              q: "Will you preserve SEO during a platform migration?",
-              a: "Yes. We prioritize SEO-safe replatforming: maintain URL structures where possible, implement 301 redirects, validate canonical tags, and ensure structured data is correct on PDPs/PLPs.",
-            },
-            {
-              q: "Do you optimize performance and Core Web Vitals?",
-              a: "Yes. We improve LCP/INP/CLS through code and asset optimization, caching/CDN strategy, image handling, and platform-specific best practices.",
-            },
-            {
-              q: "How long does it take to launch a new ecommerce platform?",
-              a: "Timelines depend on scope and integrations. A focused Shopify/WooCommerce build can take 4–8 weeks; migrations and custom/headless programs typically run 10–20+ weeks.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
-
-      <ServiceCTA message="Need help choosing between Shopify, WooCommerce, or a custom platform? Let’s map the right path for your ecommerce stack." />
 
       <CTA />
     </>

@@ -55,14 +55,15 @@ export default function ServicesMegaMenu({
         </Link>
       </div>
 
-      <div className="grid gap-3 md:gap-4 grid-cols-2 sm:grid-cols-2">
-        <div className="rounded-[1rem] bg-white p-4 md:p-6">
+      <div className="grid gap-2 md:gap-4 grid-cols-2 sm:grid-cols-2 items-stretch">
+        {/* Ecommerce Platforms */}
+        <div className="rounded-[1rem] bg-white p-4 md:p-6 h-full flex flex-col border border-black/10">
           <Link
             href="/services/ecommerce-platforms"
             onClick={onNavigate}
-            className="group flex items-center justify-between gap-4"
+            className="group flex items-center justify-between gap-4 max-sm:gap-0 min-h-[40px]"
           >
-            <h3 className="font-semibold text-lg md:text-xl">
+            <h3 className="font-semibold !text-md max-sm:!text-sm md:text-xl">
               Ecommerce Platforms
             </h3>
 
@@ -70,9 +71,9 @@ export default function ServicesMegaMenu({
               <div className="relative flex items-center">
                 <div
                   className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
-                  w-9 h-9 md:w-10 md:h-10 aspect-square
-                  flex items-center justify-center transition-all duration-300
-                  -mr-[10%]"
+            w-9 h-9 md:w-10 md:h-10 max-sm:w-8 max-sm:h-8 aspect-square
+            flex items-center justify-center transition-all duration-300
+            -mr-[10%] max-sm:mr-[-20%]"
                 >
                   <div className="relative w-1/2 h-1/2 overflow-hidden">
                     <div className="relative overflow-hidden w-full h-full">
@@ -87,7 +88,7 @@ export default function ServicesMegaMenu({
                   alt="Ecommerce platforms"
                   width={80}
                   height={80}
-                  className="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-tr from-[#12009c] to-[#1902c6] rounded-full border border-white"
+                  className="w-9 h-9 md:w-10 md:h-10 max-sm:w-8 max-sm:h-8 bg-gradient-to-tr from-[#12009c] to-[#1902c6] rounded-full border border-white"
                 />
               </div>
             </div>
@@ -95,19 +96,23 @@ export default function ServicesMegaMenu({
 
           <hr className="my-3 border-gray-300" />
 
-          <ul className="text-sm md:text-base font-semibold text-gray-800">
+          <ul className="text-sm max-sm:text-xs md:text-base font-semibold text-gray-800">
             {ecommercePlatforms.map((service, idx) => (
-              <li key={service.name}>
-                {idx > 0 && <hr className="my-2 border-gray-200" />}
+              <li
+                key={service.name}
+                className={`min-h-[70px] flex items-center ${
+                  idx > 0 ? "border-t border-gray-200" : ""
+                }`}
+              >
                 <Link
                   href={service.href}
                   onClick={onNavigate}
-                  className="py-2 group flex items-center justify-between gap-3 "
+                  className="py-2 group flex items-center justify-between gap-3 w-full"
                 >
                   <span>{service.name}</span>
                   <div
-                    className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
-                    w-8 h-8 flex items-center justify-center transition-all duration-300"
+                    className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full aspect-square
+              w-8 h-8 max-sm:w-7 max-sm:h-7 flex items-center justify-center transition-all duration-300"
                   >
                     <div className="relative w-1/2 h-1/2 overflow-hidden">
                       <div className="relative overflow-hidden w-full h-full">
@@ -122,13 +127,14 @@ export default function ServicesMegaMenu({
           </ul>
         </div>
 
-        <div className="rounded-[1rem] bg-white p-4 md:p-6">
+        {/* Ecommerce Solutions */}
+        <div className="rounded-[1rem] bg-white p-4 md:p-6 h-full flex flex-col border border-black/10">
           <Link
             href="/services/ecommerce-solutions"
             onClick={onNavigate}
-            className="group flex items-center justify-between gap-4"
+            className="group flex items-center justify-between gap-4 max-sm:gap-0 min-h-[40px]"
           >
-            <h3 className="font-semibold text-lg md:text-xl">
+            <h3 className="font-semibold !text-md max-sm:!text-sm md:text-xl">
               Ecommerce Solutions
             </h3>
 
@@ -136,9 +142,9 @@ export default function ServicesMegaMenu({
               <div className="relative flex items-center">
                 <div
                   className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
-                  w-9 h-9 md:w-10 md:h-10 aspect-square
-                  flex items-center justify-center transition-all duration-300
-                  -mr-[10%]"
+            w-9 h-9 md:w-10 md:h-10 max-sm:w-8 max-sm:h-8 aspect-square
+            flex items-center justify-center transition-all duration-300
+            -mr-[10%] max-sm:mr-[-20%]"
                 >
                   <div className="relative w-1/2 h-1/2 overflow-hidden">
                     <div className="relative overflow-hidden w-full h-full">
@@ -153,7 +159,7 @@ export default function ServicesMegaMenu({
                   alt="Ecommerce solutions"
                   width={80}
                   height={80}
-                  className="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-tr from-[#12009c] to-[#1902c6] rounded-full border border-white"
+                  className="w-9 h-9 md:w-10 md:h-10 max-sm:w-8 max-sm:h-8 bg-gradient-to-tr from-[#12009c] to-[#1902c6] rounded-full border border-white"
                 />
               </div>
             </div>
@@ -161,16 +167,16 @@ export default function ServicesMegaMenu({
 
           <hr className="my-3 border-gray-300" />
 
-          <ul className="text-sm md:text-base font-semibold text-gray-800">
+          <ul className="text-sm max-sm:text-xs md:text-base font-semibold text-gray-800">
             {ecommerceSolutions.map((service, idx) => (
-              <li key={service.name}>
-                {idx > 0 && <hr className="my-2 border-gray-200" />}
+              <li
+                key={service.name}
+                className={`min-h-[70px] flex items-center w-full justify-stretch ${
+                  idx > 0 ? "border-t border-gray-200" : ""
+                }`}
+              >
                 <div className="py-2 group flex items-center justify-between gap-3">
                   <span>{service.name}</span>
-                  <div
-                    className="
-                    w-8 h-8"
-                  />
                 </div>
               </li>
             ))}

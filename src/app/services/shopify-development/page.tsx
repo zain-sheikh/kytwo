@@ -9,6 +9,11 @@ import ServiceOfferings from "@/components/ServiceOfferings";
 import ServiceCTA from "@/components/ServiceCTA";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Shopify Development Services and Custom Design store",
@@ -40,7 +45,7 @@ export const metadata: Metadata = {
     title: "Shopify Development Services",
     description:
       "Shopify development services for custom themes, Shopify Plus migrations, and high-converting ecommerce stores.",
-    url: "/services/shopify-development",
+    url: `${siteUrl}/services/shopify-development`,
     type: "website",
   },
   alternates: {
@@ -50,6 +55,41 @@ export const metadata: Metadata = {
 
 export default function ShopifyDevelopmentPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+  const featuredQuestion =
+    "How long does it take to develop a custom Shopify store?";
+  const featuredAnswer =
+    "The timeline varies based on your store's complexity and requirements. A basic Shopify store typically takes 4-6 weeks, while a custom Shopify Plus store with advanced features can take 8-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific needs.";
+  const faqItems = [
+    {
+      q: "Do you provide Shopify theme customization or build from scratch?",
+      a: "We offer both services! We can customize existing Shopify themes to match your brand, or build completely custom themes from scratch using Shopify Liquid. Custom themes give you more flexibility and unique design options, while theme customization is faster and more cost-effective.",
+    },
+    {
+      q: "Can you migrate my existing store to Shopify?",
+      a: "Yes! We specialize in seamless store migrations from platforms like WooCommerce, Magento, BigCommerce, and others to Shopify. We handle product data, customer information, order history, and ensure zero downtime during the migration process.",
+    },
+    {
+      q: "What's included in your Shopify development services?",
+      a: "Our Shopify development services include store setup, custom theme development, payment gateway integration, product catalog setup, shipping configuration, app integrations, SEO optimization, mobile responsiveness, and post-launch support. We'll customize the package based on your specific requirements.",
+    },
+    {
+      q: "Do you offer Shopify Plus development?",
+      a: "Absolutely! We're experienced Shopify Plus partners and can help you migrate to Shopify Plus or develop advanced features like custom checkout experiences, wholesale channels, advanced analytics, and international selling capabilities.",
+    },
+    {
+      q: "Will my Shopify store be mobile-responsive?",
+      a: "Yes, mobile responsiveness is a core requirement for all our Shopify stores. We use mobile-first design principles to ensure your store looks and functions perfectly on all devices, including smartphones, tablets, and desktops.",
+    },
+    {
+      q: "Do you provide ongoing maintenance and support?",
+      a: "Yes, we offer ongoing maintenance packages that include security updates, performance monitoring, bug fixes, content updates, and technical support. We can customize a support plan that fits your business needs.",
+    },
+    {
+      q: "How much does Shopify development cost?",
+      a: "Pricing depends on the scope of work, including store complexity, custom features, integrations, and design requirements. Basic Shopify stores start around $5,000, while custom Shopify Plus stores can range from $15,000 to $50,000+. Contact us for a detailed quote based on your specific needs.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -109,6 +149,21 @@ export default function ShopifyDevelopmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
+        }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "Shopify development" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 
@@ -229,43 +284,37 @@ export default function ShopifyDevelopmentPage() {
           },
         ]}
       />
-
       <ServiceCTA message="Ready to build your high-converting Shopify store?" />
+
+      <RelatedServices
+        services={[
+          {
+            title: "Ecommerce Platform Migration",
+            description:
+              "Move from Magento, WooCommerce, or legacy stacks to Shopify with SEO-safe, zero-downtime migrations.",
+            href: "/services/platform-migration",
+          },
+          {
+            title: "Ecommerce Design",
+            description:
+              "Conversion-focused storefront design for Shopify, from product pages and navigation to checkout UX.",
+            href: "/services/ecommerce-design",
+          },
+          {
+            title: "Ecommerce Solutions",
+            description:
+              "Payment, SEO, and CRO improvements that layer onto your existing Shopify stack.",
+            href: "/services/ecommerce-solutions",
+          },
+        ]}
+      />
+
       {/* FAQ Section */}
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="How long does it take to develop a custom Shopify store?"
-          featuredAnswer="The timeline varies based on your store's complexity and requirements. A basic Shopify store typically takes 4-6 weeks, while a custom Shopify Plus store with advanced features can take 8-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific needs."
-          faqItems={[
-            {
-              q: "Do you provide Shopify theme customization or build from scratch?",
-              a: "We offer both services! We can customize existing Shopify themes to match your brand, or build completely custom themes from scratch using Shopify Liquid. Custom themes give you more flexibility and unique design options, while theme customization is faster and more cost-effective.",
-            },
-            {
-              q: "Can you migrate my existing store to Shopify?",
-              a: "Yes! We specialize in seamless store migrations from platforms like WooCommerce, Magento, BigCommerce, and others to Shopify. We handle product data, customer information, order history, and ensure zero downtime during the migration process.",
-            },
-            {
-              q: "What's included in your Shopify development services?",
-              a: "Our Shopify development services include store setup, custom theme development, payment gateway integration, product catalog setup, shipping configuration, app integrations, SEO optimization, mobile responsiveness, and post-launch support. We'll customize the package based on your specific requirements.",
-            },
-            {
-              q: "Do you offer Shopify Plus development?",
-              a: "Absolutely! We're experienced Shopify Plus partners and can help you migrate to Shopify Plus or develop advanced features like custom checkout experiences, wholesale channels, advanced analytics, and international selling capabilities.",
-            },
-            {
-              q: "Will my Shopify store be mobile-responsive?",
-              a: "Yes, mobile responsiveness is a core requirement for all our Shopify stores. We use mobile-first design principles to ensure your store looks and functions perfectly on all devices, including smartphones, tablets, and desktops.",
-            },
-            {
-              q: "Do you provide ongoing maintenance and support?",
-              a: "Yes, we offer ongoing maintenance packages that include security updates, performance monitoring, bug fixes, content updates, and technical support. We can customize a support plan that fits your business needs.",
-            },
-            {
-              q: "How much does Shopify development cost?",
-              a: "Pricing depends on the scope of work, including store complexity, custom features, integrations, and design requirements. Basic Shopify stores start around $5,000, while custom Shopify Plus stores can range from $15,000 to $50,000+. Contact us for a detailed quote based on your specific needs.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
       {/* Final CTA */}

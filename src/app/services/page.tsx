@@ -6,6 +6,10 @@ import CTA from "@/components/CTA";
 import Link from "next/link";
 import Services from "@/components/Services";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Ecommerce Services",
@@ -27,7 +31,7 @@ export const metadata: Metadata = {
     title: "Ecommerce Services",
     description:
       "End-to-end ecommerce services across platforms, marketplaces, design, and cross-platform solutions.",
-    url: "/services",
+    url: `${siteUrl}/services`,
     type: "website",
   },
   alternates: {
@@ -105,6 +109,52 @@ export default function ServicesPage() {
     },
   };
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: services.flatMap((category) =>
+      category.items.map((service, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: service.name,
+        url: service.href ? `${baseUrl}${service.href}` : baseUrl,
+      }))
+    ),
+  };
+  const featuredQuestion = "What ecommerce services does Kytwo offer?";
+  const featuredAnswer =
+    "We provide full-stack ecommerce services across Shopify, WooCommerce, custom/headless platforms, and marketplaces—covering strategy, UI/UX design, development, integrations, ecommerce SEO, performance, and conversion optimization.";
+  const faqItems = [
+    {
+      q: "Can you help us choose the right ecommerce platform?",
+      a: "Yes. We compare Shopify, WooCommerce, and custom/headless options based on your catalog complexity, integrations, growth targets, and total cost of ownership—then map a practical rollout plan.",
+    },
+    {
+      q: "Do you handle ecommerce redesigns and CRO?",
+      a: "Yes. We redesign storefronts and improve conversion with UX audits, analytics reviews, experiment roadmaps, and iterative improvements across PDP/PLP, cart, and checkout.",
+    },
+    {
+      q: "Do you build integrations (payments, shipping, tax, ERP/CRM)?",
+      a: "Yes. We integrate payment gateways, shipping and tax providers, analytics, and back-office systems like ERP, CRM, OMS, PIM, and WMS—so data stays consistent and operations stay efficient.",
+    },
+    {
+      q: "Can you migrate from a legacy platform without losing SEO?",
+      a: "Yes. We plan data migration and SEO protection: URL mapping, 301 redirects, canonical tags, structured data validation, and phased launches to reduce risk and downtime.",
+    },
+    {
+      q: "Do you improve Core Web Vitals and site performance?",
+      a: "Yes. We optimize assets, rendering, caching, and platform-specific performance to improve LCP/INP/CLS and create faster shopping experiences that convert better.",
+    },
+    {
+      q: "Do you offer ongoing support after launch?",
+      a: "Yes. We can provide ongoing optimization, feature iteration, technical maintenance, and performance/SEO monitoring as your store grows.",
+    },
+    {
+      q: "How do we get started?",
+      a: "Start with a discovery call. We’ll review your goals, current platform, analytics, and constraints, then propose a clear scope and next steps.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
   return (
     <>
       <script
@@ -112,6 +162,21 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <Breadcrumbs
+        items={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
       <ServiceHero
@@ -226,38 +291,9 @@ export default function ServicesPage() {
 
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="What ecommerce services does Kytwo offer?"
-          featuredAnswer="We provide full-stack ecommerce services across Shopify, WooCommerce, custom/headless platforms, and marketplaces—covering strategy, UI/UX design, development, integrations, ecommerce SEO, performance, and conversion optimization."
-          faqItems={[
-            {
-              q: "Can you help us choose the right ecommerce platform?",
-              a: "Yes. We compare Shopify, WooCommerce, and custom/headless options based on your catalog complexity, integrations, growth targets, and total cost of ownership—then map a practical rollout plan.",
-            },
-            {
-              q: "Do you handle ecommerce redesigns and CRO?",
-              a: "Yes. We redesign storefronts and improve conversion with UX audits, analytics reviews, experiment roadmaps, and iterative improvements across PDP/PLP, cart, and checkout.",
-            },
-            {
-              q: "Do you build integrations (payments, shipping, tax, ERP/CRM)?",
-              a: "Yes. We integrate payment gateways, shipping and tax providers, analytics, and back-office systems like ERP, CRM, OMS, PIM, and WMS—so data stays consistent and operations stay efficient.",
-            },
-            {
-              q: "Can you migrate from a legacy platform without losing SEO?",
-              a: "Yes. We plan data migration and SEO protection: URL mapping, 301 redirects, canonical tags, structured data validation, and phased launches to reduce risk and downtime.",
-            },
-            {
-              q: "Do you improve Core Web Vitals and site performance?",
-              a: "Yes. We optimize assets, rendering, caching, and platform-specific performance to improve LCP/INP/CLS and create faster shopping experiences that convert better.",
-            },
-            {
-              q: "Do you offer ongoing support after launch?",
-              a: "Yes. We can provide ongoing optimization, feature iteration, technical maintenance, and performance/SEO monitoring as your store grows.",
-            },
-            {
-              q: "How do we get started?",
-              a: "Start with a discovery call. We’ll review your goals, current platform, analytics, and constraints, then propose a clear scope and next steps.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
 

@@ -13,24 +13,55 @@ export default function Header() {
   const servicesMenuRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const lockedScrollY = useRef(0);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMenuOpen]);
+    const shouldLock = isMenuOpen || isServicesMenuOpen;
+    const body = document.body;
+    const html = document.documentElement;
 
-  useEffect(() => {
-    if (isServicesMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
+    const lock = () => {
+      lockedScrollY.current = window.scrollY;
+
+      // Reliable mobile scroll lock (Android Chrome / iOS Safari)
+      body.style.position = "fixed";
+      body.style.top = `-${lockedScrollY.current}px`;
+      body.style.left = "0";
+      body.style.right = "0";
+      body.style.width = "100%";
+      body.style.overflow = "hidden";
+
+      html.style.overflow = "hidden";
+      // Prevent "rubber band" scrolling where supported
+      html.style.overscrollBehaviorY = "none";
     };
-  }, [isServicesMenuOpen]);
+
+    const unlock = () => {
+      const y = lockedScrollY.current || 0;
+
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      body.style.overflow = "";
+
+      html.style.overflow = "";
+      html.style.overscrollBehaviorY = "";
+
+      window.scrollTo(0, y);
+    };
+
+    if (shouldLock) lock();
+    else unlock();
+
+    return () => {
+      // Ensure unlock if Header unmounts
+      unlock();
+    };
+  }, [isMenuOpen, isServicesMenuOpen]);
 
   const navLinks = [{ name: "Portfolio", href: "/#showcase" }];
 
@@ -63,14 +94,46 @@ export default function Header() {
     };
   }, []);
 
+  // Hide header on scroll down, show on scroll up
   useEffect(() => {
-    if (!isServicesMenuOpen) return;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY.current;
+
+      if (Math.abs(delta) < 10) return;
+
+      if (currentY > lastScrollY.current && currentY > 80) {
+        if (!isMenuOpen && !isServicesMenuOpen) {
+          setIsHidden(true);
+        }
+      } else {
+        setIsHidden(false);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen, isServicesMenuOpen]);
+
+  useEffect(() => {
+    // This outside-click handler is only for the DESKTOP services mega menu.
+    // On mobile, `isServicesMenuOpen` is used for the slide-in panel inside the
+    // mobile nav; we should NOT close it on any document click.
+    if (!isServicesMenuOpen || isMenuOpen) return;
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsServicesMenuOpen(false);
     };
 
     const onMouseDown = (e: MouseEvent) => {
+      // Safety: only run on desktop widths
+      if (typeof window !== "undefined") {
+        const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+        if (!isDesktop) return;
+      }
+
       if (
         servicesMenuRef.current &&
         !servicesMenuRef.current.contains(e.target as Node)
@@ -85,7 +148,7 @@ export default function Header() {
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("mousedown", onMouseDown);
     };
-  }, [isServicesMenuOpen]);
+  }, [isServicesMenuOpen, isMenuOpen]);
 
   const openServicesMenu = () => {
     if (servicesMenuCloseTimer.current) {
@@ -108,9 +171,15 @@ export default function Header() {
     <>
       <header
         ref={headerRef}
-        className="sticky top-0 backdrop-blur-md z-50 bg-background/50"
+        className={`sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/50 transform transition-transform duration-300 ${
+          isHidden ? "-translate-y-full" : "translate-y-0"
+        }`}
+        style={{
+          top: "env(safe-area-inset-top)", // respect notch
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
       >
-        <div className="mx-auto container border-animate px-4 py-8 mt-2 md:mt-2 flex items-center justify-between uppercase relative">
+        <div className="mx-auto container border-animate px-4 py-8 mt-2 md:mt-2 flex items-center justify-between uppercase ">
           <Link
             href="/"
             className="flex items-center gap-2"
@@ -238,7 +307,7 @@ export default function Header() {
 
       {isMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black md:hidden"
+          className="fixed inset-0 z-40 bg-background h-screen md:hidden"
           onClick={() => {
             setIsMenuOpen(false);
             setIsServicesMenuOpen(false);
@@ -248,7 +317,7 @@ export default function Header() {
             className="absolute top-30 left-4 right-4 animate-rise-up bg-white rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()} // prevent closing when clicking menu
           >
-            <div className="relative min-h-[60vh]">
+            <div className="relative min-h-[65vh]">
               {/* Primary mobile menu */}
               <div
                 className={`px-0 py-10 flex flex-col items-center gap-6 transition-transform duration-300 ${

@@ -9,6 +9,11 @@ import ServiceOfferings from "@/components/ServiceOfferings";
 import ServiceOverview from "@/components/ServiceOverview";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Marketplace Development Services for Multi-Vendor Commerce",
@@ -30,7 +35,7 @@ export const metadata: Metadata = {
     title: "Marketplace Development Services | Multi-Vendor Commerce Platforms",
     description:
       "Build a scalable multi-vendor marketplace with vendor onboarding, payouts, commissions, and secure transactions.",
-    url: "/services/marketplace-development",
+    url: `${siteUrl}/services/marketplace-development`,
     type: "website",
   },
   alternates: {
@@ -40,6 +45,40 @@ export const metadata: Metadata = {
 
 export default function MarketplaceDevelopmentPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+  const featuredQuestion = "What makes a successful marketplace build?";
+  const featuredAnswer =
+    "Frictionless vendor onboarding, clear commission and payout flows, fast search and discovery, and reliable operations. We design for vendor trust, buyer confidence, and scalable performance.";
+  const faqItems = [
+    {
+      q: "Can you integrate with payment providers for split payouts?",
+      a: "Yes. We integrate with providers that support split payments, commissions, and scheduled payouts, along with reconciliation reporting for vendors.",
+    },
+    {
+      q: "Do you support KYC/AML and compliance needs?",
+      a: "We design onboarding flows and data handling aligned with KYC/AML requirements and can integrate verification partners to streamline compliance.",
+    },
+    {
+      q: "How do you handle disputes and refunds?",
+      a: "We implement structured dispute flows, messaging, and refund handling with clear SLAs, ensuring transparency for buyers and vendors.",
+    },
+    {
+      q: "Is the marketplace mobile-friendly?",
+      a: "Yes. We build mobile-first experiences for both buyers and vendors, ensuring speed, clarity, and trust on every device.",
+    },
+    {
+      q: "Can you migrate an existing marketplace?",
+      a: "We handle data migration (vendors, products, orders), redirect planning, and phased rollouts to minimize downtime and protect SEO.",
+    },
+    {
+      q: "How long does it take to launch?",
+      a: "Timelines vary by scope. Core marketplace builds can take 10-16 weeks; complex integrations and custom features may extend timelines. We provide a plan after discovery.",
+    },
+    {
+      q: "What does marketplace development cost?",
+      a: "Costs depend on features, integrations, and scale. Focused builds start around $30k; enterprise-grade marketplaces with complex flows are scoped after discovery.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -99,6 +138,21 @@ export default function MarketplaceDevelopmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
+        }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "Marketplace development" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 
@@ -221,41 +275,33 @@ export default function MarketplaceDevelopmentPage() {
       />
 
       <ServiceCTA message="Ready to launch or scale your multi-vendor marketplace?" />
-
+      <RelatedServices
+        services={[
+          {
+            title: "Custom Ecommerce Platform",
+            description:
+              "Architect the underlying commerce engine that powers complex marketplaces.",
+            href: "/services/custom-ecommerce-platform",
+          },
+          {
+            title: "Ecommerce Platforms",
+            description:
+              "See how marketplaces fit into your broader ecommerce platform strategy.",
+            href: "/services/ecommerce-platforms",
+          },
+          {
+            title: "Ecommerce Solutions",
+            description:
+              "Add analytics, CRO, and operational tooling on top of your marketplace.",
+            href: "/services/ecommerce-solutions",
+          },
+        ]}
+      />
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="What makes a successful marketplace build?"
-          featuredAnswer="Frictionless vendor onboarding, clear commission and payout flows, fast search and discovery, and reliable operations. We design for vendor trust, buyer confidence, and scalable performance."
-          faqItems={[
-            {
-              q: "Can you integrate with payment providers for split payouts?",
-              a: "Yes. We integrate with providers that support split payments, commissions, and scheduled payouts, along with reconciliation reporting for vendors.",
-            },
-            {
-              q: "Do you support KYC/AML and compliance needs?",
-              a: "We design onboarding flows and data handling aligned with KYC/AML requirements and can integrate verification partners to streamline compliance.",
-            },
-            {
-              q: "How do you handle disputes and refunds?",
-              a: "We implement structured dispute flows, messaging, and refund handling with clear SLAs, ensuring transparency for buyers and vendors.",
-            },
-            {
-              q: "Is the marketplace mobile-friendly?",
-              a: "Yes. We build mobile-first experiences for both buyers and vendors, ensuring speed, clarity, and trust on every device.",
-            },
-            {
-              q: "Can you migrate an existing marketplace?",
-              a: "We handle data migration (vendors, products, orders), redirect planning, and phased rollouts to minimize downtime and protect SEO.",
-            },
-            {
-              q: "How long does it take to launch?",
-              a: "Timelines vary by scope. Core marketplace builds can take 10-16 weeks; complex integrations and custom features may extend timelines. We provide a plan after discovery.",
-            },
-            {
-              q: "What does marketplace development cost?",
-              a: "Costs depend on features, integrations, and scale. Focused builds start around $30k; enterprise-grade marketplaces with complex flows are scoped after discovery.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
 

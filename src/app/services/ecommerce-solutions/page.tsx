@@ -9,6 +9,11 @@ import EcommerceSolutionDetails, {
 } from "@/components/EcommerceSolutionDetails";
 import CTABar from "@/components/CTABar";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Ecommerce Solutions for Growth-Focused Brands",
@@ -27,7 +32,7 @@ export const metadata: Metadata = {
     title: "Ecommerce Solutions",
     description:
       "Cross-platform ecommerce solutions for payments, inventory, SEO, mobile experiences, and conversion rate optimization.",
-    url: "/services/ecommerce-solutions",
+    url: `${siteUrl}/services/ecommerce-solutions`,
     type: "website",
   },
   alternates: {
@@ -117,8 +122,58 @@ const solutionDetails: EcommerceSolutionDetail[] = [
 ];
 
 export default function EcommerceSolutionsPage() {
+  const featuredQuestion =
+    "Can you improve checkout, SEO, and conversion without rebuilding our ecommerce platform?";
+  const featuredAnswer =
+    "Yes. Most growth wins come from targeted ecommerce solutions—payment and checkout optimization, inventory workflows, technical SEO, Core Web Vitals, and CRO—layered onto your existing Shopify, WooCommerce, or custom stack.";
+  const faqItems = [
+    {
+      q: "What do you mean by “ecommerce solutions”?",
+      a: "Ecommerce solutions are focused improvements that plug into your current store: payment integrations, inventory management, ecommerce SEO, mobile UX, analytics, and conversion rate optimization (CRO). They’re designed to lift revenue and performance without a full replatform.",
+    },
+    {
+      q: "Which platforms do you support (Shopify, WooCommerce, headless)?",
+      a: "We work across Shopify and Shopify Plus, WooCommerce, and custom/headless commerce stacks. The approach is platform-agnostic—optimize the funnel, fix technical blockers, and improve performance where it matters most.",
+    },
+    {
+      q: "Do you handle payment integrations like Stripe, PayPal, and BNPL?",
+      a: "Yes. We implement and optimize gateways (Stripe, PayPal, wallets, and local methods), configure 3D Secure and fraud controls, and improve the checkout UX to reduce abandonment and increase authorization rates.",
+    },
+    {
+      q: "Can you integrate inventory with ERP, WMS, or a 3PL?",
+      a: "Yes. We build reliable integrations and rules for multi-location inventory, reservations, bundles/kits, backorders, and fulfillment workflows—keeping catalog and stock accurate across channels.",
+    },
+    {
+      q: "How do you approach ecommerce SEO?",
+      a: "We prioritize technical SEO and scalable content: crawlability and indexation fixes, structured data (product, category, reviews), internal linking, faceted navigation controls, and performance work to improve Core Web Vitals.",
+    },
+    {
+      q: "Do you run CRO and A/B testing programs?",
+      a: "Yes. We start with analytics and funnel reviews, then ship experiments across PDP/PLP, cart, and checkout. We can implement tracking (GA4/GTM) and testing workflows aligned to your stack.",
+    },
+    {
+      q: "How long does an ecommerce solutions engagement take?",
+      a: "It depends on scope. Quick wins can ship in 1–2 weeks; deeper programs (SEO + CRO + integrations) typically run 4–10+ weeks with iterative releases and reporting.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "Ecommerce solutions" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+
       <ServiceHero
         title="ECOMMERCE SOLUTIONS THAT"
         highlightText="UNLOCK GROWTH"
@@ -154,40 +209,34 @@ export default function EcommerceSolutionsPage() {
         href="/contact"
         buttonText="BOOK A CALL"
       />
+
+      <RelatedServices
+        services={[
+          {
+            title: "Ecommerce Platforms",
+            description:
+              "Choose or upgrade the core platform your solutions will sit on—Shopify, WooCommerce, or custom.",
+            href: "/services/ecommerce-platforms",
+          },
+          {
+            title: "Ecommerce Design",
+            description:
+              "Refine storefront UX so your CRO and SEO improvements land even better.",
+            href: "/services/ecommerce-design",
+          },
+          {
+            title: "Custom Ecommerce Platform",
+            description:
+              "When incremental solutions aren’t enough, explore a custom/headless platform.",
+            href: "/services/custom-ecommerce-platform",
+          },
+        ]}
+      />
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="Can you improve checkout, SEO, and conversion without rebuilding our ecommerce platform?"
-          featuredAnswer="Yes. Most growth wins come from targeted ecommerce solutions—payment and checkout optimization, inventory workflows, technical SEO, Core Web Vitals, and CRO—layered onto your existing Shopify, WooCommerce, or custom stack."
-          faqItems={[
-            {
-              q: "What do you mean by “ecommerce solutions”?",
-              a: "Ecommerce solutions are focused improvements that plug into your current store: payment integrations, inventory management, ecommerce SEO, mobile UX, analytics, and conversion rate optimization (CRO). They’re designed to lift revenue and performance without a full replatform.",
-            },
-            {
-              q: "Which platforms do you support (Shopify, WooCommerce, headless)?",
-              a: "We work across Shopify and Shopify Plus, WooCommerce, and custom/headless commerce stacks. The approach is platform-agnostic—optimize the funnel, fix technical blockers, and improve performance where it matters most.",
-            },
-            {
-              q: "Do you handle payment integrations like Stripe, PayPal, and BNPL?",
-              a: "Yes. We implement and optimize gateways (Stripe, PayPal, wallets, and local methods), configure 3D Secure and fraud controls, and improve the checkout UX to reduce abandonment and increase authorization rates.",
-            },
-            {
-              q: "Can you integrate inventory with ERP, WMS, or a 3PL?",
-              a: "Yes. We build reliable integrations and rules for multi-location inventory, reservations, bundles/kits, backorders, and fulfillment workflows—keeping catalog and stock accurate across channels.",
-            },
-            {
-              q: "How do you approach ecommerce SEO?",
-              a: "We prioritize technical SEO and scalable content: crawlability and indexation fixes, structured data (product, category, reviews), internal linking, faceted navigation controls, and performance work to improve Core Web Vitals.",
-            },
-            {
-              q: "Do you run CRO and A/B testing programs?",
-              a: "Yes. We start with analytics and funnel reviews, then ship experiments across PDP/PLP, cart, and checkout. We can implement tracking (GA4/GTM) and testing workflows aligned to your stack.",
-            },
-            {
-              q: "How long does an ecommerce solutions engagement take?",
-              a: "It depends on scope. Quick wins can ship in 1–2 weeks; deeper programs (SEO + CRO + integrations) typically run 4–10+ weeks with iterative releases and reporting.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
 

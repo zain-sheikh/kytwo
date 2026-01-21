@@ -9,6 +9,11 @@ import ServiceOfferings from "@/components/ServiceOfferings";
 import ServiceOverview from "@/components/ServiceOverview";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "Ecommerce Design Services for high-converting stores",
@@ -32,7 +37,7 @@ export const metadata: Metadata = {
     title: "Ecommerce Design Services",
     description:
       "Conversion-focused ecommerce design with custom UI/UX, mobile-first layouts, and optimized product and checkout flows.",
-    url: "/services/ecommerce-design",
+    url: `${siteUrl}/services/ecommerce-design`,
     type: "website",
   },
   alternates: {
@@ -42,6 +47,41 @@ export const metadata: Metadata = {
 
 export default function EcommerceDesignPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+  const featuredQuestion =
+    "How long does it take to design a custom ecommerce store?";
+  const featuredAnswer =
+    "Timelines depend on scope. A focused design engagement typically takes 3-5 weeks; larger redesigns with testing and iteration can take 6-10 weeks. We share a detailed plan after discovery.";
+  const faqItems = [
+    {
+      q: "Do you handle design-only or design + development?",
+      a: "Both. We can deliver production-ready design systems and assets for your engineering team, or handle end-to-end design and development with our Shopify and WooCommerce specialists.",
+    },
+    {
+      q: "Can you redesign my existing store without hurting SEO?",
+      a: "Yes. We plan redirects, maintain URL structures where needed, and design with Core Web Vitals and structured data in mind to protect and improve organic performance.",
+    },
+    {
+      q: "How do you improve conversion rates?",
+      a: "We focus on clarity, trust, and speed: strong hierarchy, social proof, optimized media, simplified cart/checkout, and analytics-driven A/B testing to validate improvements.",
+    },
+    {
+      q: "Will the design be mobile-optimized?",
+      a: "Absolutely. We use mobile-first layouts, touch-friendly controls, compressed assets, and clear CTAs to ensure a fast, frictionless mobile buying experience.",
+    },
+    {
+      q: "Do you provide ongoing optimization?",
+      a: "Yes. We offer ongoing CRO support, experiment roadmaps, UX audits, and iterative design updates to keep performance improving over time.",
+    },
+    {
+      q: "Which tools do you use?",
+      a: "We design in Figma with component libraries and prototypes. For testing and analytics we align with your stack—GA4, GTM, Hotjar, Optimizely, or similar.",
+    },
+    {
+      q: "What does ecommerce design cost?",
+      a: "Pricing depends on scope, pages, and testing depth. Target ranges: focused design sprints from ~$3k; comprehensive redesigns with CRO and testing from ~$10k-$30k+. We’ll tailor a proposal to your needs.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -101,6 +141,21 @@ export default function EcommerceDesignPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
+        }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "Ecommerce design" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 
@@ -221,43 +276,36 @@ export default function EcommerceDesignPage() {
           },
         ]}
       />
-
       <ServiceCTA message="Ready to design a high-converting ecommerce experience?" />
+
+      <RelatedServices
+        services={[
+          {
+            title: "Shopify Development",
+            description:
+              "Turn approved designs into fast, conversion-focused Shopify builds.",
+            href: "/services/shopify-development",
+          },
+          {
+            title: "WooCommerce Development",
+            description:
+              "Implement your new UX on WooCommerce with clean, performant code.",
+            href: "/services/woocommerce-development",
+          },
+          {
+            title: "Ecommerce Solutions",
+            description:
+              "Pair design work with CRO experiments, analytics, and SEO improvements.",
+            href: "/services/ecommerce-solutions",
+          },
+        ]}
+      />
 
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="How long does it take to design a custom ecommerce store?"
-          featuredAnswer="Timelines depend on scope. A focused design engagement typically takes 3-5 weeks; larger redesigns with testing and iteration can take 6-10 weeks. We share a detailed plan after discovery."
-          faqItems={[
-            {
-              q: "Do you handle design-only or design + development?",
-              a: "Both. We can deliver production-ready design systems and assets for your engineering team, or handle end-to-end design and development with our Shopify and WooCommerce specialists.",
-            },
-            {
-              q: "Can you redesign my existing store without hurting SEO?",
-              a: "Yes. We plan redirects, maintain URL structures where needed, and design with Core Web Vitals and structured data in mind to protect and improve organic performance.",
-            },
-            {
-              q: "How do you improve conversion rates?",
-              a: "We focus on clarity, trust, and speed: strong hierarchy, social proof, optimized media, simplified cart/checkout, and analytics-driven A/B testing to validate improvements.",
-            },
-            {
-              q: "Will the design be mobile-optimized?",
-              a: "Absolutely. We use mobile-first layouts, touch-friendly controls, compressed assets, and clear CTAs to ensure a fast, frictionless mobile buying experience.",
-            },
-            {
-              q: "Do you provide ongoing optimization?",
-              a: "Yes. We offer ongoing CRO support, experiment roadmaps, UX audits, and iterative design updates to keep performance improving over time.",
-            },
-            {
-              q: "Which tools do you use?",
-              a: "We design in Figma with component libraries and prototypes. For testing and analytics we align with your stack—GA4, GTM, Hotjar, Optimizely, or similar.",
-            },
-            {
-              q: "What does ecommerce design cost?",
-              a: "Pricing depends on scope, pages, and testing depth. Target ranges: focused design sprints from ~$3k; comprehensive redesigns with CRO and testing from ~$10k-$30k+. We’ll tailor a proposal to your needs.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
 

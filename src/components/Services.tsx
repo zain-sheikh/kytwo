@@ -204,14 +204,14 @@ export default function Services({
         </span>
       </h2>
       <div className="relative z-10 bg-[#dee2ff] rounded-[0.7rem] md:rounded-[2rem] text-black">
-        <div className="grid  gap-4 md:gap-10 grid-cols-1 xs:grid-cols-2  py-3 md:py-6 md:gap-2 lg:py-10 px-3 md:px-6 lg:px-10 m-0">
+        <div className="grid  gap-4 md:gap-10 vxs:grid-cols-2 grid-cols-1 max-sm:gap-2  py-3 max-md:p-2 md:py-6 md:gap-2 lg:py-10 px-3 md:px-6 lg:px-10 m-0">
           {/* Design Card LINK */}
           <div className=" rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white ">
             <Link
               href="/services/ecommerce-platforms"
-              className="group flex items-center gap-2 justify-between"
+              className="group flex items-center gap-2 max-sm:gap-0 justify-between"
             >
-              <h3 className="font-semibold justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-[1.5rem]">
+              <h3 className="font-semibold justify-center !text-[clamp(1.1rem,3vw,3rem)]  max-xs:!text-sm">
                 Ecommerce Platforms
               </h3>
               <div className="flex items-center gap-2">
@@ -219,9 +219,9 @@ export default function Services({
                   <div
                     className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
     w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
-    max-xs:w-[10vw] max-xs:h-[10vw] aspect-square
+    max-xs:w-[7vw] max-xs:h-[7vw] aspect-square
     flex items-center justify-center transition-all duration-300
-    -mr-[10%]"
+    -mr-[20%] sm:mr-[-10%] max-vxs:mr-[0%]"
                   >
                     <div className="relative w-1/2 h-1/2 overflow-hidden">
                       <div className="relative overflow-hidden w-full h-full ">
@@ -237,7 +237,7 @@ export default function Services({
                     width={80}
                     height={80}
                     className="w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
-    max-xs:w-[10vw] max-xs:h-[10vw]
+    max-xs:w-[7vw] max-xs:h-[7vw] aspect-square
     bg-gradient-to-tr from-[#12009c] to-[#1902c6] rounded-full animate-gradient border border-white"
                   />
                 </div>
@@ -245,27 +245,27 @@ export default function Services({
             </Link>
             <hr className="my-2 md:my-4 border-gray-400" />
             <ul
-              className="font-semibold text-gray-800 text-[clamp(0.8rem,2vw,1.5rem)] max-xs:font-normal max-xs:text-[1rem]"
+              className="font-semibold text-gray-800 text-[clamp(0.8rem,2vw,1.5rem)]  max-xs:text-xs"
               style={{ lineHeight: "1.5" }}
             >
               {ecommercePlatforms.map((service, index) => (
                 <li
                   key={service.name}
-                  className="min-h-[5vw] md:min-h-[4vw] lg:min-h-[2vw]
-    max-xs:min-h-[10vw]"
+                  className={`min-h-[75px] max-vxs:min-h-auto w-full ${
+                    index > 0 ? "border-t border-gray-400 w-full" : ""
+                  } flex items-center`}
                 >
-                  {index > 0 && <hr className="my-2 md:my-4 border-gray-400" />}
                   {service.href ? (
                     <Link
                       href={service.href}
-                      className="py-3 group flex items-center justify-between gap-3  block"
+                      className="py-2 group flex items-center justify-between gap-3  block w-full"
                     >
                       <span>{service.name}</span>
                       {service.hasArrow && (
                         <div
                           className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
-    w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[2vw] lg:h-[2vw]
-    max-xs:w-[10vw] max-xs:h-[10vw]
+    w-[6vw] h-[6vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]
+          max-xs:w-[6vw] max-xs:h-[6vw] aspect-square
     flex items-center justify-center transition-all duration-300
     "
                         >
@@ -279,7 +279,7 @@ export default function Services({
                       )}
                     </Link>
                   ) : (
-                    <div className="py-3 flex items-center gap-3">
+                    <div className="py-2 flex items-center gap-3">
                       <span>{service.name}</span>
                     </div>
                   )}
@@ -293,9 +293,9 @@ export default function Services({
           <div className=" rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white">
             <Link
               href="/services/ecommerce-solutions"
-              className="group flex  items-center gap-2 justify-between"
+              className="group flex  items-center gap-2 max-sm:gap-0 justify-between"
             >
-              <h3 className="font-semibold  justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-[1.5rem]">
+              <h3 className="font-semibold  justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-sm">
                 Ecommerce Solutions
               </h3>
 
@@ -304,9 +304,9 @@ export default function Services({
                   <div
                     className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
           w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
-          max-xs:w-[10vw] max-xs:h-[10vw] aspect-square
+          max-xs:w-[7vw] max-xs:h-[7vw] aspect-square
           flex items-center justify-center transition-all duration-300
-          -mr-[10%]"
+          -mr-[20%] sm:mr-[-10%] max-vxs:mr-[0%]"
                   >
                     <div className="relative w-1/2 h-1/2 overflow-hidden">
                       <div className="relative overflow-hidden w-full h-full">
@@ -322,7 +322,7 @@ export default function Services({
                     width={80}
                     height={80}
                     className="w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
-          max-xs:w-[10vw] max-xs:h-[10vw]
+          max-xs:w-[7vw] max-xs:h-[7vw]aspect-square
           bg-gradient-to-tr from-[#12009c] to-[#1902c6] rounded-full animate-gradient border border-white"
                   />
                 </div>
@@ -332,23 +332,27 @@ export default function Services({
             <hr className="my-2 md:my-4 border-gray-400" />
 
             <ul
-              className="font-semibold text-gray-800 text-[clamp(0.8rem,2vw,1.5rem)] max-xs:font-normal max-xs:text-[1rem]"
+              className="font-semibold text-gray-800 text-[clamp(0.8rem,2vw,1.5rem)]  max-xs:text-xs"
               style={{ lineHeight: "1.5" }}
             >
               {ecommerceSolutions.map((service, index) => (
-                <li key={service.name}>
-                  {index > 0 && <hr className="my-2 md:my-4 border-gray-400" />}
+                <li
+                  key={service.name}
+                  className={`min-h-[75px] flex items-center max-vxs:min-h-auto ${
+                    index > 0 ? "border-t border-gray-400 w-full" : ""
+                  }`}
+                >
                   {service.href ? (
                     <Link
                       href={service.href}
-                      className="py-3 group flex items-center justify-between gap-3 hover:text-[#3719ca] transition-colors block"
+                      className="py-3 group flex items-center justify-between gap-3 hover:text-[#3719ca] transition-colors block w-full"
                     >
                       <span>{service.name}</span>
                       {service.hasArrow && (
                         <div
                           className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
-    w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[2vw] lg:h-[2vw]
-    max-xs:w-[10vw] max-xs:h-[10vw]
+    w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
+          max-xs:w-[7vw] max-xs:h-[7vw] aspect-square
     flex items-center justify-center transition-all duration-300
     "
                         >
@@ -363,12 +367,7 @@ export default function Services({
                     </Link>
                   ) : (
                     <div className="py-3 flex items-center gap-3 ">
-                      <span
-                        className="min-h-[5vw] md:min-h-[4vw] lg:min-h-[2vw] flex items-center justify-center
-    max-xs:min-h-[10vw]"
-                      >
-                        {service.name}
-                      </span>
+                      <span>{service.name}</span>
                     </div>
                   )}
                 </li>

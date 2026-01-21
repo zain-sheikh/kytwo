@@ -10,12 +10,18 @@
 @custom-media --xs (min-width: 480px);
 @theme inline {
   --breakpoint-xs: 480px;
+  --breakpoint-vxs: 360px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
+@supports (-webkit-touch-callout: none) {
+  .ios-full-height {
+    /* -webkit-fill-available is the "magic" fix for Safari height bugs */
+    height: -webkit-fill-available;
+  }
+}
 
 body {
   background: var(--background);

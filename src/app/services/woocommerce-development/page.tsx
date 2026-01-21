@@ -9,6 +9,11 @@ import ServiceOfferings from "@/components/ServiceOfferings";
 import ServiceCTA from "@/components/ServiceCTA";
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import CTABar from "@/components/CTABar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { buildFaqSchema } from "@/lib/faqSchema";
+import RelatedServices from "@/components/RelatedServices";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
   title: "WooCommerce Development Services and Custom Design",
@@ -37,7 +42,7 @@ export const metadata: Metadata = {
     title: "WooCommerce Development Services",
     description:
       "WooCommerce development services for custom themes, plugins, and conversion-focused ecommerce stores.",
-    url: "/services/woocommerce-development",
+    url: `${siteUrl}/services/woocommerce-development`,
     type: "website",
   },
   alternates: {
@@ -47,6 +52,41 @@ export const metadata: Metadata = {
 
 export default function WooCommerceDevelopmentPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
+  const featuredQuestion =
+    "How long does it take to develop a custom WooCommerce store?";
+  const featuredAnswer =
+    "The timeline varies based on your store's complexity and requirements. A basic WooCommerce store typically takes 4-6 weeks, while a custom WooCommerce store with advanced features can take 8-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific needs.";
+  const faqItems = [
+    {
+      q: "Do you provide WooCommerce theme customization or build from scratch?",
+      a: "We offer both services! We can customize existing WooCommerce themes to match your brand, or build completely custom themes from scratch. Custom themes give you more flexibility and unique design options, while theme customization is faster and more cost-effective.",
+    },
+    {
+      q: "Can you migrate my existing store to WooCommerce?",
+      a: "Yes! We specialize in seamless store migrations from platforms like Shopify, Magento, BigCommerce, and others to WooCommerce. We handle product data, customer information, order history, and ensure zero downtime during the migration process.",
+    },
+    {
+      q: "What's included in your WooCommerce development services?",
+      a: "Our WooCommerce development services include store setup, custom theme development, payment gateway integration, product catalog setup, shipping configuration, plugin integrations, SEO optimization, mobile responsiveness, and post-launch support. We'll customize the package based on your specific requirements.",
+    },
+    {
+      q: "Do you develop custom WooCommerce plugins?",
+      a: "Absolutely! We're experienced in developing custom WooCommerce plugins to extend your store's functionality. Whether you need custom product types, subscription management, or unique integrations, we can build it.",
+    },
+    {
+      q: "Will my WooCommerce store be mobile-responsive?",
+      a: "Yes, mobile responsiveness is a core requirement for all our WooCommerce stores. We use mobile-first design principles to ensure your store looks and functions perfectly on all devices, including smartphones, tablets, and desktops.",
+    },
+    {
+      q: "Do you provide ongoing maintenance and support?",
+      a: "Yes, we offer ongoing maintenance packages that include security updates, performance monitoring, bug fixes, content updates, and technical support. We can customize a support plan that fits your business needs.",
+    },
+    {
+      q: "How much does WooCommerce development cost?",
+      a: "Pricing depends on the scope of work, including store complexity, custom features, integrations, and design requirements. Basic WooCommerce stores start around $5,000, while custom WooCommerce stores with advanced features can range from $15,000 to $50,000+. Contact us for a detailed quote based on your specific needs.",
+    },
+  ];
+  const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -106,6 +146,21 @@ export default function WooCommerceDevelopmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
+        }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: "WooCommerce development" },
+        ]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 
@@ -226,44 +281,37 @@ export default function WooCommerceDevelopmentPage() {
           },
         ]}
       />
-
       <ServiceCTA message="Ready to build your high-converting WooCommerce store?" />
+
+      <RelatedServices
+        services={[
+          {
+            title: "Ecommerce Platform Migration",
+            description:
+              "Plan and execute moves into or out of WooCommerce without losing SEO or uptime.",
+            href: "/services/platform-migration",
+          },
+          {
+            title: "Ecommerce Design",
+            description:
+              "Redesign WooCommerce storefronts for clearer UX, stronger trust, and better conversion.",
+            href: "/services/ecommerce-design",
+          },
+          {
+            title: "Ecommerce Solutions",
+            description:
+              "Layer on technical SEO, performance, and CRO improvements to your WooCommerce store.",
+            href: "/services/ecommerce-solutions",
+          },
+        ]}
+      />
 
       {/* FAQ Section */}
       <section className="container py-10 lg:py-20">
         <FAQSection
-          featuredQuestion="How long does it take to develop a custom WooCommerce store?"
-          featuredAnswer="The timeline varies based on your store's complexity and requirements. A basic WooCommerce store typically takes 4-6 weeks, while a custom WooCommerce store with advanced features can take 8-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific needs."
-          faqItems={[
-            {
-              q: "Do you provide WooCommerce theme customization or build from scratch?",
-              a: "We offer both services! We can customize existing WooCommerce themes to match your brand, or build completely custom themes from scratch. Custom themes give you more flexibility and unique design options, while theme customization is faster and more cost-effective.",
-            },
-            {
-              q: "Can you migrate my existing store to WooCommerce?",
-              a: "Yes! We specialize in seamless store migrations from platforms like Shopify, Magento, BigCommerce, and others to WooCommerce. We handle product data, customer information, order history, and ensure zero downtime during the migration process.",
-            },
-            {
-              q: "What's included in your WooCommerce development services?",
-              a: "Our WooCommerce development services include store setup, custom theme development, payment gateway integration, product catalog setup, shipping configuration, plugin integrations, SEO optimization, mobile responsiveness, and post-launch support. We'll customize the package based on your specific requirements.",
-            },
-            {
-              q: "Do you develop custom WooCommerce plugins?",
-              a: "Absolutely! We're experienced in developing custom WooCommerce plugins to extend your store's functionality. Whether you need custom product types, subscription management, or unique integrations, we can build it.",
-            },
-            {
-              q: "Will my WooCommerce store be mobile-responsive?",
-              a: "Yes, mobile responsiveness is a core requirement for all our WooCommerce stores. We use mobile-first design principles to ensure your store looks and functions perfectly on all devices, including smartphones, tablets, and desktops.",
-            },
-            {
-              q: "Do you provide ongoing maintenance and support?",
-              a: "Yes, we offer ongoing maintenance packages that include security updates, performance monitoring, bug fixes, content updates, and technical support. We can customize a support plan that fits your business needs.",
-            },
-            {
-              q: "How much does WooCommerce development cost?",
-              a: "Pricing depends on the scope of work, including store complexity, custom features, integrations, and design requirements. Basic WooCommerce stores start around $5,000, while custom WooCommerce stores with advanced features can range from $15,000 to $50,000+. Contact us for a detailed quote based on your specific needs.",
-            },
-          ]}
+          featuredQuestion={featuredQuestion}
+          featuredAnswer={featuredAnswer}
+          faqItems={faqItems}
         />
       </section>
 
