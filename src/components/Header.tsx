@@ -63,7 +63,7 @@ export default function Header() {
     };
   }, [isMenuOpen, isServicesMenuOpen]);
 
-  const navLinks = [{ name: "Portfolio", href: "/#showcase" }];
+  const navLinks = [{ name: "Portfolio", href: "/portfolio" }];
 
   const pathname = usePathname();
 

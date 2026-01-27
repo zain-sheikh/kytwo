@@ -5,12 +5,12 @@ import Image from "next/image";
 const reviews = [
   {
     id: 1,
-    industry: "Market Place",
+    industry: "Shopify Plus",
     flag: "🇺🇸",
     details:
       "An 18% increase in overall conversions and 3x sales, after we did CRO (conversion rate optimization) ",
     // text: "Great experience working with Zain! The project was delivered on time.",
-    name: "John jjj",
+    name: "John J",
     image: "/portfolio/fatty15.png",
   },
   {
@@ -36,7 +36,7 @@ const reviews = [
   },
   {
     id: 4,
-    industry: "Market Place",
+    industry: "Shopify",
     flag: "🇺🇸",
     details:
       "True sea make $550k+ sales each month with around 100,000 active subscriptions",
