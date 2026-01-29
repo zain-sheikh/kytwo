@@ -25,6 +25,7 @@ export default function Logos() {
                 alt={l.alt}
                 width={120}
                 height={40}
+                sizes="120px"
                 className="mx-auto h-10 w-auto object-contain brightness-0 invert "
               />
             ))}
