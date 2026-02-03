@@ -16,7 +16,7 @@ import RelatedServices from "@/components/RelatedServices";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
-  title: "Marketplace Development Services for Multi-Vendor Commerce",
+  title: "Marketplace Development for Multi-Vendor Commerce",
   description:
     "Marketplace development for multi-vendor commerce, including vendor onboarding, portals, payouts, commissions, and secure transactions.",
   keywords: [

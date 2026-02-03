@@ -53,6 +53,14 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-300 text-lg">
               <li>
                 <Link
+                  href="/voucher"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  $300 voucher
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/services/shopify-development"
                   className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
                 >

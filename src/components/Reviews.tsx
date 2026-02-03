@@ -271,7 +271,8 @@ export default function ReviewsSEO() {
                           <Image
                             key={i}
                             src="/star.png"
-                            alt="5-star client rating"
+                            alt=""
+                            aria-hidden="true"
                             width={16}
                             height={16}
                             className="inline-block align-middle star-anim"

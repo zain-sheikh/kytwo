@@ -148,7 +148,7 @@ Through strategic redesign of key conversion funnels using Shopify Plus's advanc
     clientName: "Michael Smith",
     image: "/portfolio/truesea.png",
     shortDescription:
-      "TrueSea makes $550k+ sales each month with around 100,000 active subscriptions on Shopify Plus",
+      "TrueSea generates $550k+ in monthly sales and supports ~100,000 active Shopify Plus subscriptions, built for scale, speed, and high-converting checkout flows.",
     fullDescription: `We developed a comprehensive Shopify Plus store for TrueSea, a subscription-based ecommerce business that has achieved remarkable success with over $550,000 in monthly sales and 100,000 active subscriptions.
 
 Built entirely on Shopify Plus, the store handles everything from subscription management, recurring billing, inventory management, vendor management, to customer service. It leverages Shopify Plus's advanced features including automated subscription renewals, flexible billing cycles, subscription upgrades/downgrades, and comprehensive analytics.

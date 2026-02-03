@@ -37,7 +37,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} — Portfolio Case Study`,
+    title: `${project.title}`,
     description: project.shortDescription,
     keywords: [
       project.industry.toLowerCase(),

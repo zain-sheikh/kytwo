@@ -161,7 +161,7 @@ export default function Showcase() {
                       <h3
                         className="font-bold uppercase "
                         style={{
-                          fontSize: "clamp(1.5rem, 3vw, 3rem)",
+                          fontSize: "clamp(1rem, 3vw, 3rem)",
                           lineHeight: "1.2",
                         }}
                       >

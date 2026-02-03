@@ -7,12 +7,14 @@ export default function CTA() {
           <div className="flex flex-col w-[100%] md:w-[80%] lg:w-[70%] mx-auto items-center justify-center text-center relative border border-gray-200 rounded-[0.7rem] md:rounded-[1.5rem] p-3 md:p-10 pb-3 md:pb-5 bg-white">
             <h2 className="font-bold leading-[0.9] text-center mb-8 !text-[clamp(2.5rem,8vw,8rem)]">
               READY TO BUILD YOUR <br />
-              <span className="text-[#FDC448]">ONLINE STORE?</span>
+              <span className="md:bg-[linear-gradient(to_right,_#9866f2_0%,_#eda1f5_100%)] md:bg-clip-text md:text-transparent md:whitespace-nowrap">
+                ONLINE STORE?
+              </span>{" "}
             </h2>
 
             <p className="text-gray-400 text-lg md:text-2xl max-w-2xl mb-10 text-center">
-              We don&#39;t just build ecommerce stores; we build revenue-driving platforms.
-              Let&#39;s turn your products into sales.
+              We don&#39;t just build ecommerce stores; we build revenue-driving
+              platforms. Let&#39;s turn your products into sales.
             </p>
 
             <a

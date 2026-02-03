@@ -170,7 +170,7 @@ export default function ShopifyDevelopmentPage() {
       <ServiceHero
         title="PROFESSIONAL SHOPIFY DEVELOPMENT SERVICES FOR"
         highlightText="HIGH-CONVERTING STORES"
-        subtitle="Years of building successful Shopify stores"
+        subtitle="Custom Shopify builds, migrations, and optimization for growth"
         imageSrc="/3d-fire.png"
         imageAlt="Expert Shopify development services"
       />

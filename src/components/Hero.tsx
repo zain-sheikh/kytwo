@@ -16,7 +16,7 @@ export default function Hero() {
           <hr className="my-4 border-gray-400" />
 
           <div className="flex items-center gap-2 justify-between">
-            <div className="flex flex-1 items-center gap-2 max-w-[40%] ">
+            <div className="flex flex-1 items-center gap-2 max-w-[60%] ">
               <Image
                 src="/3d-fire.png"
                 alt="Fire icon representing years of experience building ecommerce stores"
@@ -28,7 +28,8 @@ export default function Hero() {
                 className="text-sm md:text-lg lg:text-3xl text-white"
                 style={{ lineHeight: "1.25" }}
               >
-                Years of building high-converting ecommerce stores
+                6+ Years of building high-converting B2B and DTC ecommerce
+                stores
               </p>
             </div>
 

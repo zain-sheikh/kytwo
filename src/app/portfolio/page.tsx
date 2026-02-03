@@ -11,7 +11,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 export const metadata: Metadata = {
   title: "Portfolio — Ecommerce Projects & Case Studies",
   description:
-    "Explore our portfolio of successful ecommerce projects, marketplace platforms, and SaaS solutions. See how we've helped businesses achieve 3x sales growth and serve 100,000+ users.",
+    "Explore our portfolio of successful ecommerce and marketplace platforms. See how we've helped businesses achieve 3x sales growth and serve 100,000+ users.",
   keywords: [
     "ecommerce portfolio",
     "shopify projects",

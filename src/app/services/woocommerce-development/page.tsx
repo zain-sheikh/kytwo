@@ -167,7 +167,7 @@ export default function WooCommerceDevelopmentPage() {
       <ServiceHero
         title="PROFESSIONAL WOOCOMMERCE DEVELOPMENT SERVICES FOR"
         highlightText="HIGH-CONVERTING STORES"
-        subtitle="Years of building successful WooCommerce stores"
+        subtitle="Custom WooCommerce builds, migrations, and optimization for growth"
         imageSrc="/3d-fire.png"
         imageAlt="Expert WooCommerce development services"
       />

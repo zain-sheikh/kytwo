@@ -4,11 +4,13 @@ import Link from "next/link";
 interface ServiceHeroProps {
   title: string;
   highlightText: string;
-  subtitle: string;
+  subtitle: string | React.ReactNode;
   imageSrc?: string;
   imageAlt?: string;
   ctaText?: string;
   ctaLink?: string;
+  backgroundColor?: string;
+  highlightColor?: string;
 }
 
 export default function ServiceHero({
@@ -19,17 +21,26 @@ export default function ServiceHero({
   imageAlt = "Expert services",
   ctaText = "GET STARTED",
   ctaLink = "/contact",
+  backgroundColor = "#3719ca",
+  highlightColor = "#FDC448",
 }: ServiceHeroProps) {
+  const isWhiteBg = backgroundColor === "white" || backgroundColor === "#ffffff" || backgroundColor === "#fff";
+  const textColor = isWhiteBg ? "text-black" : "text-white";
+  const borderColor = isWhiteBg ? "border-gray-300" : "border-gray-400";
+  
   return (
     <section className="container py-10 lg:py-24">
       <div className="flex flex-col sm:flex-row items-stretch gap-8">
-        <div className="flex flex-col sm:w-auto bg-[#3719ca] md:p-10 p-4 rounded-xl animate-rise-up">
-          <h1 className="md:font-semibold text-white uppercase">
+        <div 
+          className={`flex flex-col sm:w-auto md:p-10 p-4 rounded-xl animate-rise-up ${isWhiteBg ? "bg-white" : ""}`}
+          style={!isWhiteBg ? { backgroundColor } : {}}
+        >
+          <h1 className={`md:font-semibold ${textColor} uppercase`}>
             {title}{" "}
-            <span className="text-[#FDC448] font-bold ">{highlightText}</span>
+            <span className="font-bold" style={{ color: highlightColor }}>{highlightText}</span>
           </h1>
 
-          <hr className="my-4 border-gray-400" />
+          <hr className={`my-4 ${borderColor}`} />
 
           <div className="flex items-center gap-2 justify-between">
             <div className="flex flex-1 items-center gap-2 ">
@@ -41,7 +52,7 @@ export default function ServiceHero({
                 className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex-shrink-0 bg-transparent"
               />
               <p
-                className="text-sm md:text-lg lg:text-3xl text-white"
+                className={`text-sm md:text-lg lg:text-3xl ${textColor}`}
                 style={{ lineHeight: "1.25" }}
               >
                 {subtitle}

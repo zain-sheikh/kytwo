@@ -63,7 +63,10 @@ export default function Header() {
     };
   }, [isMenuOpen, isServicesMenuOpen]);
 
-  const navLinks = [{ name: "Portfolio", href: "/portfolio" }];
+  const navLinks = [
+    { name: "About", href: "/about" },
+    { name: "Portfolio", href: "/portfolio" },
+  ];
 
   const pathname = usePathname();
 

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Kytwo",
   },
   description:
-    "Kytwo is an ecommerce development agency that builds high‑converting online stores and marketplace platforms using Shopify, WooCommerce, and custom ecommerce solutions.",
+    "Kytwo is an ecommerce development agency that builds high‑converting online stores and marketplace platforms using Shopify, WooCommerce, and custom solutions.",
   keywords: [
     "ecommerce development agency",
     "online store development",
@@ -121,7 +121,7 @@ export default function RootLayout({
     description:
       "Leading ecommerce development agency specializing in custom online stores, marketplace platforms, Shopify development, WooCommerce stores, and ecommerce solutions that drive sales and revenue.",
     email: "hello@kytwo.com",
-    foundingDate: "2017",
+    foundingDate: "2019",
     numberOfEmployees: {
       "@type": "QuantitativeValue",
       value: "10-50",

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface Feature {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   href?: string;
 }
 

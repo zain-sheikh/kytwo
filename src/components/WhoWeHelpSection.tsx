@@ -1,7 +1,7 @@
 type WhoWeHelpSectionProps = {
   title?: string;
   subtitle?: string;
-  items: string[];
+  items: (string | React.ReactNode)[];
 };
 
 export default function WhoWeHelpSection({
@@ -36,9 +36,9 @@ export default function WhoWeHelpSection({
 
         {/* Right list column (styled like FAQ cards, but static list) */}
         <div className="w-full lg:w-2/3 space-y-3">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <div
-              key={item}
+              key={index}
               className="w-full rounded-[1rem] px-5 py-4 md:px-6 md:py-5 border bg-white/5 border-white/10 text-sm md:text-base text-gray-100 flex gap-3"
             >
               <span className="mt-2 h-2 w-2 rounded-full bg-[#FDC448] flex-shrink-0" />

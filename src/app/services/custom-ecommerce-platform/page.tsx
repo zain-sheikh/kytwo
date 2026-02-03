@@ -16,7 +16,7 @@ import RelatedServices from "@/components/RelatedServices";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
-  title: "Custom Ecommerce Platform Development for scalable revenue",
+  title: "Custom Ecommerce Platform to increase revenue",
   description:
     "Custom ecommerce platform development for complex businesses, including multi-storefront, headless commerce, and deep integrations.",
   keywords: [
