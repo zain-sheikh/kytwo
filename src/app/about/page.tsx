@@ -36,6 +36,13 @@ export const metadata: Metadata = {
       "Learn about Kytwo, an ecommerce development agency with 6+ years of experience building high-converting online stores and marketplace platforms.",
     url: `${siteUrl}/about`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Ecommerce Development Agency" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/about",

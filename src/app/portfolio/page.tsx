@@ -27,6 +27,13 @@ export const metadata: Metadata = {
       "Explore our portfolio of successful ecommerce projects, marketplace platforms, and SaaS solutions.",
     url: `${siteUrl}/portfolio`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Portfolio & Case Studies" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/portfolio",

@@ -37,6 +37,13 @@ export const metadata: Metadata = {
       "Build a scalable multi-vendor marketplace with vendor onboarding, payouts, commissions, and secure transactions.",
     url: `${siteUrl}/services/marketplace-development`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Marketplace Development" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/marketplace-development",

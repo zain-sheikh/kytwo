@@ -33,6 +33,13 @@ export const metadata: Metadata = {
       "End-to-end ecommerce services across platforms, marketplaces, design, and cross-platform solutions.",
     url: `${siteUrl}/services`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Ecommerce Services" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services",
@@ -56,6 +63,7 @@ const services: {
       "Platform-specific ecommerce services for Shopify, WooCommerce, custom platforms, and multi-vendor marketplaces.",
     href: "/services/ecommerce-platforms",
     items: [
+      { name: "Shopify Development Partner", href: "/services/shopify-development-partner" },
       { name: "Shopify Development", href: "/services/shopify-development" },
       {
         name: "WooCommerce Development",

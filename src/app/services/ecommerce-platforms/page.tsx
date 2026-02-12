@@ -33,6 +33,13 @@ export const metadata: Metadata = {
       "Shopify, WooCommerce, custom ecommerce platforms, and marketplace development for growth-focused brands.",
     url: `${siteUrl}/services/ecommerce-platforms`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Ecommerce Platform Services" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/ecommerce-platforms",

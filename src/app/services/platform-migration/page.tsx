@@ -42,6 +42,13 @@ export const metadata: Metadata = {
       "Expert ecommerce platform migrations between Shopify, WooCommerce, Magento, and custom platforms with SEO protection and zero downtime.",
     url: `${siteUrl}/services/platform-migration`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Platform Migration Services" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/platform-migration",

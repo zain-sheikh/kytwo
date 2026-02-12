@@ -39,6 +39,13 @@ export const metadata: Metadata = {
       "Conversion-focused ecommerce design with custom UI/UX, mobile-first layouts, and optimized product and checkout flows.",
     url: `${siteUrl}/services/ecommerce-design`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Ecommerce Design Services" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/ecommerce-design",

@@ -34,6 +34,13 @@ export const metadata: Metadata = {
       "Cross-platform ecommerce solutions for payments, inventory, SEO, mobile experiences, and conversion rate optimization.",
     url: `${siteUrl}/services/ecommerce-solutions`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Ecommerce Solutions" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/ecommerce-solutions",

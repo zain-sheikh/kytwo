@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "online store development",
     "ecommerce website development",
     "Shopify development",
+    "shopify development partner",
     "WooCommerce development",
     "custom ecommerce platform",
     "marketplace development",

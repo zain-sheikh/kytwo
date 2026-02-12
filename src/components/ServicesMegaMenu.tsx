@@ -9,6 +9,7 @@ type ServicesMegaMenuProps = {
 };
 
 const ecommercePlatforms = [
+  { name: "Shopify Development Partner", href: "/services/shopify-development-partner" },
   { name: "Shopify Development", href: "/services/shopify-development" },
   {
     name: "WooCommerce Development",

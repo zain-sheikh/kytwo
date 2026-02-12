@@ -37,6 +37,13 @@ export const metadata: Metadata = {
       "Build a custom ecommerce platform with headless architecture, robust integrations, and performance engineering.",
     url: `${siteUrl}/services/custom-ecommerce-platform`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Custom Ecommerce Platform" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/custom-ecommerce-platform",

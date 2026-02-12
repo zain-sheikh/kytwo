@@ -47,6 +47,13 @@ export const metadata: Metadata = {
       "Shopify development services for custom themes, Shopify Plus migrations, and high-converting ecommerce stores.",
     url: `${siteUrl}/services/shopify-development`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Shopify Development Services" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/shopify-development",

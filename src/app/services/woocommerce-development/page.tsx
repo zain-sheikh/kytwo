@@ -44,6 +44,13 @@ export const metadata: Metadata = {
       "WooCommerce development services for custom themes, plugins, and conversion-focused ecommerce stores.",
     url: `${siteUrl}/services/woocommerce-development`,
     type: "website",
+    images: [
+      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — WooCommerce Development Services" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteUrl}/og.png`],
   },
   alternates: {
     canonical: "/services/woocommerce-development",

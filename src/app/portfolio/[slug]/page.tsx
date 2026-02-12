@@ -52,10 +52,22 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${siteUrl}${project.image}`,
+          url: project.image
+            ? (project.image.startsWith("http") ? project.image : `${siteUrl}${project.image}`)
+            : `${siteUrl}/og.png`,
+          width: 1200,
+          height: 630,
           alt: project.title,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [
+      project.image
+        ? (project.image.startsWith("http") ? project.image : `${siteUrl}${project.image}`)
+        : `${siteUrl}/og.png`,
+    ],
     },
     alternates: {
       canonical: `/portfolio/${slug}`,

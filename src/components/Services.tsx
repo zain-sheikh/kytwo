@@ -13,6 +13,11 @@ export default function Services({
 
   const ecommercePlatforms = [
     {
+      name: "Shopify Development Partner",
+      href: "/services/shopify-development-partner",
+      hasArrow: true,
+    },
+    {
       name: "Shopify Development",
       href: "/services/shopify-development",
       hasArrow: true,
