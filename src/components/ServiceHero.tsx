@@ -24,20 +24,25 @@ export default function ServiceHero({
   backgroundColor = "#3719ca",
   highlightColor = "#FDC448",
 }: ServiceHeroProps) {
-  const isWhiteBg = backgroundColor === "white" || backgroundColor === "#ffffff" || backgroundColor === "#fff";
+  const isWhiteBg =
+    backgroundColor === "white" ||
+    backgroundColor === "#ffffff" ||
+    backgroundColor === "#fff";
   const textColor = isWhiteBg ? "text-black" : "text-white";
   const borderColor = isWhiteBg ? "border-gray-300" : "border-gray-400";
-  
+
   return (
-    <section className="container py-10 lg:py-24">
+    <section className="container py-10 lg:py-15">
       <div className="flex flex-col sm:flex-row items-stretch gap-8">
-        <div 
+        <div
           className={`flex flex-col sm:w-auto md:p-10 p-4 rounded-xl animate-rise-up ${isWhiteBg ? "bg-white" : ""}`}
           style={!isWhiteBg ? { backgroundColor } : {}}
         >
           <h1 className={`md:font-semibold ${textColor} uppercase`}>
             {title}{" "}
-            <span className="font-bold" style={{ color: highlightColor }}>{highlightText}</span>
+            <span className="font-bold" style={{ color: highlightColor }}>
+              {highlightText}
+            </span>
           </h1>
 
           <hr className={`my-4 ${borderColor}`} />

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import ServicesMegaMenu from "@/components/ServicesMegaMenu";
+import { GiftIcon } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -260,14 +261,21 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-
-          <Link
-            href="/contact"
-            className="text-lg font-bold bg-white text-black px-4 py-2 rounded-full hidden md:block"
-          >
-            Contact Us
-          </Link>
-
+          <div className="flex items-center gap-4">
+            <Link
+              href="/contact"
+              className="text-lg font-bold bg-white text-black px-4 py-2 rounded-full hidden md:block"
+            >
+              Contact Us
+            </Link>
+            <Link
+              aria-label="Get $300 voucher"
+              href="/voucher"
+              className="hidden md:block"
+            >
+              <GiftIcon className="w-6 h-6 animate-bounce" />
+            </Link>
+          </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-white z-50"
@@ -320,7 +328,7 @@ export default function Header() {
             className="absolute top-30 left-4 right-4 animate-rise-up bg-white rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()} // prevent closing when clicking menu
           >
-            <div className="relative min-h-[65vh]">
+            <div className="relative min-h-[70vh]">
               {/* Primary mobile menu */}
               <div
                 className={`px-0 py-10 flex flex-col items-center gap-6 transition-transform duration-300 ${
@@ -350,6 +358,13 @@ export default function Header() {
                   className="mt-4 bg-[#3719ca] text-white px-6 py-2 rounded-full font-bold"
                 >
                   Contact Us
+                </Link>
+                <Link
+                  href="/voucher"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="mt-4 bg-[#3719ca] text-white px-6 py-2 rounded-full font-bold"
+                >
+                  $300 Voucher
                 </Link>
               </div>
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "Kytwo — Ecommerce Development Agency",
-    template: "%s | Kytwo",
+    template: "%s",
   },
   description:
     "Kytwo is an ecommerce development agency that builds high‑converting online stores and marketplace platforms using Shopify, WooCommerce, and custom solutions.",

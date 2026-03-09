@@ -12,19 +12,18 @@ import CTABar from "@/components/CTABar";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildFaqSchema } from "@/lib/faqSchema";
 import RelatedServices from "@/components/RelatedServices";
+import Link from "next/link";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Platform Migration Services",
+  title: "Ecommerce Migration Services & Platform Migration Agency",
   description:
-    "Ecommerce platform migration services between Shopify, WooCommerce, Magento, BigCommerce, and custom platforms with zero downtime and SEO protection.",
+    "Ecommerce website migration services for Shopify, WooCommerce and custom platforms. SEO-safe ecommerce platform migration with data transfer and zero downtime.",
   keywords: [
     "ecommerce platform migration",
     "shopify migration services",
     "woocommerce migration",
-    "magento migration",
-    "bigcommerce migration",
     "platform migration services",
     "ecommerce replatforming",
     "store migration",
@@ -35,15 +34,28 @@ export const metadata: Metadata = {
     "shopify plus migration",
     "migration planning",
     "platform migration agency",
+    "ecommerce migration services",
+    "ecommerce migration service",
+    "ecommerce website migration service",
+    "ecommerce migration company",
+    "ecommerce data migration services",
+    "ecommerce platform migration services",
+    "woocommerce migration services",
+    "store migration services",
   ],
   openGraph: {
-    title: "Ecommerce Platform Migration Services | Zero-Downtime Migrations",
+    title: "Ecommerce Migration Services & Platform Migration Agency",
     description:
-      "Expert ecommerce platform migrations between Shopify, WooCommerce, Magento, and custom platforms with SEO protection and zero downtime.",
+      "Expert ecommerce migration services between Shopify, WooCommerce,  and custom platforms with SEO protection and zero downtime.",
     url: `${siteUrl}/services/platform-migration`,
     type: "website",
     images: [
-      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Platform Migration Services" },
+      {
+        url: `${siteUrl}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: "Kytwo — Platform Migration Services",
+      },
     ],
   },
   twitter: {
@@ -63,8 +75,8 @@ export default function PlatformMigrationPage() {
     "Migration timelines depend on catalog size, data complexity, and integrations. Simple migrations can take 4-8 weeks; complex migrations with custom data and deep integrations typically take 8-16 weeks. We provide a detailed timeline after discovery.";
   const faqItems = [
     {
-      q: "Can you migrate from Magento to Shopify or WooCommerce?",
-      a: "Yes. We specialize in Magento to Shopify, Magento to WooCommerce, and other platform transitions. We handle product data, customer accounts, order history, and ensure SEO protection throughout.",
+      q: "Can you migrate from Shopify, WooCommerce or custom platforms?",
+      a: "Yes. We specialize in Shopify to WooCommerce, Shopify to custom platforms, WooCommerce to Shopify, WooCommerce to custom platforms, custom platforms to Shopify, custom platforms to WooCommerce, and other platform transitions. We handle product data, customer accounts, order history, and ensure SEO protection throughout.",
     },
     {
       q: "Will my SEO rankings be affected during migration?",
@@ -94,6 +106,10 @@ export default function PlatformMigrationPage() {
       q: "How much does platform migration cost?",
       a: "Pricing depends on catalog size, data complexity, integrations, and platform complexity. Simple migrations start around $5k-$10k; complex enterprise migrations range from $15k-$50k+. We provide detailed estimates after discovery.",
     },
+    {
+      q: "Why work with an ecommerce platform migration agency instead of a freelancer?",
+      a: "As an ecommerce migration company, we bring a full team across strategy, development, data migration, and SEO. That means clearer planning, dedicated QA, better risk management, and true accountability for your ecommerce platform migration services from discovery through post-launch support.",
+    },
   ];
   const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
 
@@ -108,7 +124,7 @@ export default function PlatformMigrationPage() {
     },
     areaServed: "Worldwide",
     description:
-      "Ecommerce platform migration services including data migration, SEO protection, zero-downtime cutovers, and post-migration optimization for Shopify, WooCommerce, Magento, and custom platforms.",
+      "Ecommerce platform migration services including data migration, SEO protection, zero-downtime cutovers, and post-migration optimization for Shopify, WooCommerce, and custom platforms.",
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
@@ -174,17 +190,88 @@ export default function PlatformMigrationPage() {
       />
 
       <ServiceHero
-        title="ECOMMERCE PLATFORM MIGRATION WITH"
-        highlightText="ZERO DOWNTIME & SEO PROTECTION"
-        subtitle="Seamless migrations between Shopify, WooCommerce, Magento, and custom platforms"
+        title="ECOMMERCE PLATFORM MIGRATION SERVICES WITH"
+        highlightText="DATA MIGRATION & SEO PROTECTION"
+        subtitle={
+          <>
+            Seamless ecommerce website migrations between{" "}
+            <Link className="underline" href="/services/shopify-development">
+              Shopify
+            </Link>
+            ,{" "}
+            <Link
+              className="underline"
+              href="/services/woocommerce-development"
+            >
+              WooCommerce
+            </Link>
+            , or{" "}
+            <Link
+              className="underline"
+              href="/services/custom-ecommerce-platform"
+            >
+              custom platforms
+            </Link>
+          </>
+        }
         imageSrc="/3d-fire.png"
         imageAlt="Ecommerce platform migration services"
+        ctaText="GET MIGRATED"
       />
+
+      {/* Keyword intro section */}
+      <section className="container py-10 lg:py-16">
+        <div className="space-y-4">
+          <h2 className="relative left-0 right-0 font-semibold text-center justify-center !text-[clamp(1.7rem,7vw,5rem)] max-xs:!text-[2.5rem] mb-10 max-md:max-w-[70%] max-sm:max-w-[80%] max-md:mx-auto">
+            Ecommerce Migration Services With{" "}
+            <span className="md:bg-[linear-gradient(to_right,_#9866f2_0%,_#eda1f5_35%,_#ffffff_85%)] md:bg-clip-text md:text-transparent md:whitespace-nowrap">
+              Zero Downtime & SEO Protection
+            </span>
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-3 text-black">
+            <div className="bg-white p-6 rounded-2xl border border-border/60">
+              <h3 className="text-base font-semibold mb-4 border-b border-border/60 pb-4">
+                Complete Ecommerce Website Migration
+              </h3>
+              <p>
+                Our ecommerce migration services help businesses move their
+                online stores between platforms like Shopify, WooCommerce and
+                custom platforms without losing SEO rankings or customer data.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-border/60">
+              <h3 className="text-base font-semibold mb-4 border-b border-border/60 pb-4">
+                Secure Ecommerce Data Migration
+              </h3>
+              <p>
+                We handle complete ecommerce website migration including product
+                catalogs, customers, order history, images, and integrations.
+                Our migration process protects your search rankings with
+                structured URL mapping, 301 redirects, and technical SEO
+                validation.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-border/60">
+              <h3 className="text-base font-semibold mb-4 border-b border-border/60 pb-4">
+                Platform Migration for Shopify, WooCommerce & Custom Platforms
+              </h3>
+              <p>
+                Whether you are moving from Shopify to WooCommerce, WooCommerce
+                to Shopify, or migrating from a custom ecommerce platform, our
+                team ensures a smooth transition with minimal downtime.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <WhoWeHelpSection
         subtitle="Best for SEO-sensitive and revenue-critical stores that need a safe, zero-drama platform migration."
         items={[
-          "Stores moving between Shopify, WooCommerce, Magento, BigCommerce, or custom stacks",
+          "Stores moving between Shopify, WooCommerce, or custom stacks",
           "High-traffic brands that cannot afford downtime during cutover",
           "SEO-dependent stores needing careful URL mapping and structured data preservation",
           "Teams with complex data, subscriptions, or order history that must stay intact",
@@ -295,22 +382,22 @@ export default function PlatformMigrationPage() {
       <RelatedServices
         services={[
           {
-            title: "Ecommerce Platforms",
+            title: "Shopify Development",
             description:
-              "Strategy and implementation across Shopify, WooCommerce, custom platforms, and marketplaces.",
-            href: "/services/ecommerce-platforms",
+              "Custom Shopify themes, Shopify Plus builds, app integrations, and conversion optimization for growth-focused DTC brands.",
+            href: "/services/shopify-development",
+          },
+          {
+            title: "WooCommerce Development",
+            description:
+              "High-performance WooCommerce stores with custom themes, plugins, and payment integrations for WordPress ecosystems.",
+            href: "/services/woocommerce-development",
           },
           {
             title: "Custom Ecommerce Platform",
             description:
-              "Headless and custom commerce builds for teams that have outgrown off-the-shelf platforms.",
+              "Headless, API-first ecommerce platforms tailored to complex catalogs, B2B logic, and enterprise integrations.",
             href: "/services/custom-ecommerce-platform",
-          },
-          {
-            title: "Ecommerce Solutions",
-            description:
-              "Post-migration SEO, performance, and CRO programs to grow revenue on the new platform.",
-            href: "/services/ecommerce-solutions",
           },
         ]}
       />

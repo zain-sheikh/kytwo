@@ -12,9 +12,9 @@ export default function CTA() {
               </span>{" "}
             </h2>
 
-            <p className="text-gray-400 text-lg md:text-2xl max-w-2xl mb-10 text-center">
-              We don&#39;t just build ecommerce stores; we build revenue-driving
-              platforms. Let&#39;s turn your products into sales.
+            <p className=" text-black text-lg md:text-2xl max-w-2xl mb-10 text-center">
+              We don&#39;t just build ecommerce stores, we build revenue-driving
+              ecommerce stores. Let&#39;s turn your products into sales.
             </p>
 
             <a

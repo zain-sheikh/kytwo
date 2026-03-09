@@ -34,7 +34,12 @@ export const metadata: Metadata = {
     url: `${siteUrl}/services`,
     type: "website",
     images: [
-      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Ecommerce Services" },
+      {
+        url: `${siteUrl}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: "Kytwo — Ecommerce Services",
+      },
     ],
   },
   twitter: {
@@ -63,7 +68,10 @@ const services: {
       "Platform-specific ecommerce services for Shopify, WooCommerce, custom platforms, and multi-vendor marketplaces.",
     href: "/services/ecommerce-platforms",
     items: [
-      { name: "Shopify Development Partner", href: "/services/shopify-development-partner" },
+      {
+        name: "Shopify Development Partner",
+        href: "/services/shopify-development-partner",
+      },
       { name: "Shopify Development", href: "/services/shopify-development" },
       {
         name: "WooCommerce Development",
@@ -126,7 +134,7 @@ export default function ServicesPage() {
         position: idx + 1,
         name: service.name,
         url: service.href ? `${baseUrl}${service.href}` : baseUrl,
-      }))
+      })),
     ),
   };
   const featuredQuestion = "What ecommerce services does Kytwo offer?";
@@ -160,6 +168,14 @@ export default function ServicesPage() {
     {
       q: "How do we get started?",
       a: "Start with a discovery call. We’ll review your goals, current platform, analytics, and constraints, then propose a clear scope and next steps.",
+    },
+    {
+      q: "What’s the difference between ecommerce platforms, ecommerce solutions, and platform migration?",
+      a: "Ecommerce platforms are the core stack you build on (Shopify, WooCommerce, custom, marketplaces). Ecommerce solutions are cross-platform improvements like payments, inventory, SEO, and CRO that plug into your existing store. Platform migration covers moving from one platform to another while protecting data, SEO, and revenue.",
+    },
+    {
+      q: "Which ecommerce service should we start with if we’re not sure what we need?",
+      a: "If you’re unhappy with your current platform, start with ecommerce platform strategy and migration planning. If your stack is fine but growth is stuck, begin with ecommerce solutions—payments, SEO, CRO, and analytics. In both cases we usually start with a short discovery to confirm whether you need a new platform, targeted improvements, or both.",
     },
   ];
   const faqSchema = buildFaqSchema(featuredQuestion, featuredAnswer, faqItems);
@@ -205,6 +221,31 @@ export default function ServicesPage() {
               We help brands build, migrate, and optimize ecommerce experiences
               across Shopify, WooCommerce, custom/headless platforms, and
               marketplaces—without sacrificing performance, SEO, or conversion.
+            </p>
+            <p className="text-sm md:text-base text-gray-200">
+              Explore our{" "}
+              <Link
+                href="/services/ecommerce-platforms"
+                className="underline underline-offset-4"
+              >
+                ecommerce platform services
+              </Link>
+              ,{" "}
+              <Link
+                href="/services/platform-migration"
+                className="underline underline-offset-4"
+              >
+                ecommerce platform migration services
+              </Link>
+              , and{" "}
+              <Link
+                href="/services/ecommerce-solutions"
+                className="underline underline-offset-4"
+              >
+                ecommerce solutions
+              </Link>{" "}
+              to see how we connect platform choice, migrations, and ongoing
+              optimization into a single ecommerce growth strategy.
             </p>
             <div className="flex flex-wrap gap-2">
               {[

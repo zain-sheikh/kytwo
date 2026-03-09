@@ -26,7 +26,7 @@ export default function Logos() {
                 width={120}
                 height={40}
                 sizes="120px"
-                className="mx-auto h-10 w-auto object-contain brightness-0 invert "
+                className="mx-auto h-10 w-auto object-contain brightness-0 invert max-w-[120px] max-h-[40px]"
               />
             ))}
           </div>

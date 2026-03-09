@@ -95,16 +95,16 @@ export default function FAQSection({
                       {isActive ? "−" : "+"}
                     </span>
                   </div>
-                  {isActive && (
-                    <p
-                      className="mt-2  text-gray-700"
-                      style={{
-                        fontSize: "clamp(0.8rem, 1.4vw, 1.4rem)",
-                      }}
-                    >
-                      {item.a}
-                    </p>
-                  )}
+                  <p
+                    className={`mt-2 text-gray-700 ${
+                      isActive ? "block" : "hidden"
+                    }`}
+                    style={{
+                      fontSize: "clamp(0.8rem, 1.4vw, 1.4rem)",
+                    }}
+                  >
+                    {item.a}
+                  </p>
                 </button>
               );
             })}

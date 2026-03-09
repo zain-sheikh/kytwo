@@ -9,8 +9,14 @@ type ServicesMegaMenuProps = {
 };
 
 const ecommercePlatforms = [
-  { name: "Shopify Development Partner", href: "/services/shopify-development-partner" },
-  { name: "Shopify Development", href: "/services/shopify-development" },
+  {
+    name: "Shopify Development Partner",
+    href: "/services/shopify-development-partner",
+  },
+  {
+    name: "Shopify Development",
+    href: "/services/shopify-development",
+  },
   {
     name: "WooCommerce Development",
     href: "/services/woocommerce-development",
@@ -23,15 +29,37 @@ const ecommercePlatforms = [
     name: "Marketplace Development",
     href: "/services/marketplace-development",
   },
-  { name: "Ecommerce Design", href: "/services/ecommerce-design" },
+  {
+    name: "Ecommerce Design",
+    href: "/services/ecommerce-design",
+  },
 ];
 
 const ecommerceSolutions = [
-  { name: "Payment Integration", href: "/services/ecommerce-solutions" },
-  { name: "Inventory Management", href: "/services/ecommerce-solutions" },
-  { name: "Ecommerce SEO", href: "/services/ecommerce-solutions" },
-  { name: "Ecommerce Mobile App", href: "/services/ecommerce-solutions" },
-  { name: "Conversion Optimization", href: "/services/ecommerce-solutions" },
+  {
+    name: "Ecommerce Platform Migration",
+    href: "/services/platform-migration",
+  },
+  {
+    name: "Payment Integration",
+    href: null,
+  },
+  {
+    name: "Inventory Management",
+    href: null,
+  },
+  {
+    name: "Ecommerce SEO",
+    href: null,
+  },
+  {
+    name: "Ecommerce Mobile App",
+    href: null,
+  },
+  {
+    name: "Conversion Optimization",
+    href: null,
+  },
 ];
 
 export default function ServicesMegaMenu({
@@ -176,9 +204,30 @@ export default function ServicesMegaMenu({
                   idx > 0 ? "border-t border-gray-200" : ""
                 }`}
               >
-                <div className="py-2 group flex items-center justify-between gap-3">
-                  <span>{service.name}</span>
-                </div>
+                {service.href ? (
+                  <Link
+                    href={service.href}
+                    onClick={onNavigate}
+                    className="py-2 group flex items-center justify-between gap-3 w-full"
+                  >
+                    <span>{service.name}</span>
+                    <div
+                      className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full aspect-square
+              w-8 h-8 max-sm:w-7 max-sm:h-7 flex items-center justify-center transition-all duration-300"
+                    >
+                      <div className="relative w-1/2 h-1/2 overflow-hidden">
+                        <div className="relative overflow-hidden w-full h-full">
+                          <ArrowUpRight className="absolute inset-0 w-full h-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full group-hover:translate-x-full" />
+                          <ArrowUpRight className="absolute inset-0 w-full h-full -translate-x-full translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="py-2 group flex items-center justify-between gap-3 w-full">
+                    <span>{service.name}</span>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

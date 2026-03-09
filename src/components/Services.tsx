@@ -46,6 +46,11 @@ export default function Services({
 
   const ecommerceSolutions = [
     {
+      name: "Ecommerce Platform Migration",
+      href: "/services/platform-migration",
+      hasArrow: true,
+    },
+    {
       name: "Payment Integration",
       href: null,
       hasArrow: false,
@@ -217,7 +222,7 @@ export default function Services({
               className="group flex items-center gap-2 max-sm:gap-0 justify-between"
             >
               <h3 className="font-semibold justify-center !text-[clamp(1.1rem,3vw,3rem)]  max-xs:!text-sm">
-                Ecommerce Platforms
+                Ecommerce <br /> Platforms
               </h3>
               <div className="flex items-center gap-2">
                 <div className="relative flex items-center">
@@ -301,7 +306,7 @@ export default function Services({
               className="group flex  items-center gap-2 max-sm:gap-0 justify-between"
             >
               <h3 className="font-semibold  justify-center !text-[clamp(1.1rem,3vw,3rem)] max-xs:!text-sm">
-                Ecommerce Solutions
+                Ecommerce <br /> Solutions
               </h3>
 
               <div className="flex items-center gap-2">
@@ -350,16 +355,16 @@ export default function Services({
                   {service.href ? (
                     <Link
                       href={service.href}
-                      className="py-3 group flex items-center justify-between gap-3 hover:text-[#3719ca] transition-colors block w-full"
+                      className="py-2 group flex items-center justify-between gap-3  block w-full"
                     >
                       <span>{service.name}</span>
                       {service.hasArrow && (
                         <div
                           className="border bg-white text-black group-hover:bg-black group-hover:text-white border-black rounded-full
-    w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] lg:w-[4vw] lg:h-[4vw]
-          max-xs:w-[7vw] max-xs:h-[7vw] aspect-square
-    flex items-center justify-center transition-all duration-300
-    "
+   w-[6vw] h-[6vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]
+         max-xs:w-[6vw] max-xs:h-[6vw] aspect-square
+   flex items-center justify-center transition-all duration-300
+   "
                         >
                           <div className="relative w-1/2 h-1/2 overflow-hidden">
                             <div className="relative overflow-hidden w-full h-full ">
