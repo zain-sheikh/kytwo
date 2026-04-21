@@ -7,15 +7,16 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  className?: string;
 }
 
-export default function Breadcrumbs({ items }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   if (!items.length) return null;
 
   return (
     <nav
       aria-label="Breadcrumb"
-      className="container py-4 text-xs md:text-sm text-gray-400"
+      className={`container py-4 text-xs md:text-sm text-gray-400 ${className}`}
     >
       <ol className="flex flex-wrap items-center gap-1">
         {items.map((item, index) => {

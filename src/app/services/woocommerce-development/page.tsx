@@ -12,6 +12,7 @@ import CTABar from "@/components/CTABar";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildFaqSchema } from "@/lib/faqSchema";
 import RelatedServices from "@/components/RelatedServices";
+import Link from "next/link";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
@@ -98,7 +99,7 @@ export default function WooCommerceDevelopmentPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "WooCommerce Development",
+    name: "WooCommerce Development",
     provider: {
       "@type": "Organization",
       name: "Kytwo",
@@ -189,6 +190,26 @@ export default function WooCommerceDevelopmentPage() {
           "Stores requiring bespoke plugins, integrations, and performance tuning",
         ]}
       />
+
+      <section className="container py-6">
+        <p className="text-gray-200 text-sm md:text-base max-w-3xl">
+          Planning a move off WooCommerce? Explore our{" "}
+          <Link
+            href="/services/platform-migration/woocommerce-migration"
+            className="underline underline-offset-4"
+          >
+            WooCommerce migration agency
+          </Link>{" "}
+          page or our full{" "}
+          <Link
+            href="/services/platform-migration"
+            className="underline underline-offset-4"
+          >
+            ecommerce migration services
+          </Link>
+          .
+        </p>
+      </section>
 
       <ServiceOverview
         title="WHY CHOOSE OUR"

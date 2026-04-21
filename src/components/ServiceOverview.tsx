@@ -1,5 +1,7 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Feature {
   title: string;
@@ -20,6 +22,7 @@ export default function ServiceOverview({
   features,
   showArrow = false,
 }: ServiceOverviewProps) {
+  const router = useRouter();
   return (
     <section className="container py-10">
       <h2 className="relative left-0 right-0 font-semibold text-center justify-center !text-[clamp(1.7rem,7vw,5rem)] max-xs:!text-[2.5rem] mb-10 max-md:max-w-[70%] max-sm:max-w-[80%] max-md:mx-auto">
@@ -108,9 +111,25 @@ export default function ServiceOverview({
 
           if (feature.href) {
             return (
-              <Link key={index} href={feature.href} className={cardClassName}>
+              <div
+                key={index}
+                className={cardClassName}
+                role="link"
+                tabIndex={0}
+                onClick={(e) => {
+                  const target = e.target as HTMLElement | null;
+                  if (target?.closest("a")) return; // allow inner links
+                  router.push(feature.href!);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    router.push(feature.href!);
+                  }
+                }}
+              >
                 {cardContent}
-              </Link>
+              </div>
             );
           }
 

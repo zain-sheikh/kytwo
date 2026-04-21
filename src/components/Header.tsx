@@ -65,6 +65,7 @@ export default function Header() {
   }, [isMenuOpen, isServicesMenuOpen]);
 
   const navLinks = [
+    // { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Portfolio", href: "/portfolio" },
   ];

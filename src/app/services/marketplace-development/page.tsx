@@ -90,7 +90,7 @@ export default function MarketplaceDevelopmentPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Marketplace Development",
+    name: "Marketplace Development",
     provider: {
       "@type": "Organization",
       name: "Kytwo",

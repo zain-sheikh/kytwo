@@ -12,6 +12,7 @@ import CTABar from "@/components/CTABar";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildFaqSchema } from "@/lib/faqSchema";
 import RelatedServices from "@/components/RelatedServices";
+import Link from "next/link";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
@@ -101,7 +102,7 @@ export default function ShopifyDevelopmentPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Shopify Development",
+    name: "Shopify Development",
     provider: {
       "@type": "Organization",
       name: "Kytwo",
@@ -192,6 +193,27 @@ export default function ShopifyDevelopmentPage() {
           "Subscription and repeat-purchase models needing reliable performance and UX",
         ]}
       />
+
+      <section className="container py-6">
+        <p className="text-gray-200 text-sm md:text-base max-w-3xl">
+          If you&apos;re migrating from WooCommerce, Magento, or a custom stack,
+          start with our{" "}
+          <Link
+            href="/services/platform-migration/shopify-migration"
+            className="underline underline-offset-4"
+          >
+            Shopify migration services
+          </Link>{" "}
+          guide or see the full{" "}
+          <Link
+            href="/services/platform-migration"
+            className="underline underline-offset-4"
+          >
+            platform migration agency
+          </Link>{" "}
+          process.
+        </p>
+      </section>
 
       <ServiceOverview
         title="WHY CHOOSE OUR"

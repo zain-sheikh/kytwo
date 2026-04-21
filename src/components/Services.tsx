@@ -80,7 +80,7 @@ export default function Services({
   const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Ecommerce Development Services",
+    name: "Ecommerce Development Services",
     provider: {
       "@type": "Organization",
       name: "Kytwo",

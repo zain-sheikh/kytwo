@@ -28,7 +28,12 @@ export const metadata: Metadata = {
     url: `${siteUrl}/portfolio`,
     type: "website",
     images: [
-      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Portfolio & Case Studies" },
+      {
+        url: `${siteUrl}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: "Kytwo — Portfolio & Case Studies",
+      },
     ],
   },
   twitter: {
@@ -130,25 +135,25 @@ export default function PortfolioPage() {
       {/* Stats Section */}
       <section className="container py-10 lg:py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
+          <div className="bg-[#382550cc] border border-[#a698c54d] rounded-2xl p-6">
             <div className="text-4xl md:text-5xl font-bold text-[#FDC448] mb-2">
-              {projects.length}+
+              500+
             </div>
             <div className="text-gray-400">Projects Delivered</div>
           </div>
-          <div>
+          <div className="bg-[#382550cc] border border-[#a698c54d] rounded-2xl p-6">
             <div className="text-4xl md:text-5xl font-bold text-[#FDC448] mb-2">
               $550k+
             </div>
             <div className="text-gray-400">Monthly Sales Generated</div>
           </div>
-          <div>
+          <div className="bg-[#382550cc] border border-[#a698c54d] rounded-2xl p-6">
             <div className="text-4xl md:text-5xl font-bold text-[#FDC448] mb-2">
               100k+
             </div>
             <div className="text-gray-400">Active Users</div>
           </div>
-          <div>
+          <div className="bg-[#382550cc] border border-[#a698c54d] rounded-2xl p-6">
             <div className="text-4xl md:text-5xl font-bold text-[#FDC448] mb-2">
               3x
             </div>

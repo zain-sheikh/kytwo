@@ -13,7 +13,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 export const metadata: Metadata = {
   title: "About Kytwo — Premium Ecommerce Development & Design Agency",
   description:
-    "Kytwo is an ecommerce development agency with 6+ years of experience building high-converting online stores, marketplace platforms, and custom ecommerce solutions using Shopify, WooCommerce, and custom platforms.",
+    "Kytwo is an ecommerce development agency building and migrating high-converting Shopify and WooCommerce stores, marketplaces, and custom ecommerce platforms.",
   keywords: [
     "ecommerce development agency",
     "about kytwo",
@@ -37,7 +37,12 @@ export const metadata: Metadata = {
     url: `${siteUrl}/about`,
     type: "website",
     images: [
-      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Ecommerce Development Agency" },
+      {
+        url: `${siteUrl}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: "Kytwo — Ecommerce Development Agency",
+      },
     ],
   },
   twitter: {
@@ -76,21 +81,21 @@ export default function AboutPage() {
           Zero-downtime migrations between{" "}
           <Link
             href="/services/shopify-development"
-            className="text-white underline hover:text-[#FDC448] transition-colors"
+            className=" underline hover:text-[#FDC448] transition-colors"
           >
             Shopify
           </Link>
           ,{" "}
           <Link
             href="/services/woocommerce-development"
-            className="text-white underline hover:text-[#FDC448] transition-colors"
+            className=" underline hover:text-[#FDC448] transition-colors"
           >
             WooCommerce
           </Link>
           , Magento, BigCommerce, Square, and{" "}
           <Link
             href="/services/custom-ecommerce-platform"
-            className="text-white underline hover:text-[#FDC448] transition-colors"
+            className=" underline hover:text-[#FDC448] transition-colors"
           >
             custom platforms
           </Link>
@@ -98,6 +103,7 @@ export default function AboutPage() {
           downtime.
         </>
       ),
+      href: "/services/platform-migration",
     },
     {
       title: "Conversion Optimization",

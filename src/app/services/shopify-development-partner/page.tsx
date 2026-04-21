@@ -97,7 +97,7 @@ export default function ShopifyDevelopmentPartnerPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Shopify Development Partner",
+    name: "Shopify Development Partner",
     provider: {
       "@type": "Organization",
       name: "Kytwo",

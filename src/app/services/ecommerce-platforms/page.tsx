@@ -11,6 +11,7 @@ import CTABar from "@/components/CTABar";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildFaqSchema } from "@/lib/faqSchema";
 import RelatedServices from "@/components/RelatedServices";
+import Link from "next/link";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
@@ -206,6 +207,40 @@ export default function EcommercePlatformsPage() {
         features={platformFeatures}
         showArrow={true}
       />
+
+      <section className="container py-6">
+        <p className="text-gray-200 text-sm md:text-base max-w-3xl">
+          If replatforming is part of your decision, start with{" "}
+          <Link
+            href="/services/platform-migration"
+            className="underline underline-offset-4"
+          >
+            ecommerce website migration services
+          </Link>
+          . For deeper scope, see{" "}
+          <Link
+            href="/services/platform-migration/woocommerce-migration"
+            className="underline underline-offset-4"
+          >
+            WooCommerce migration
+          </Link>
+          ,{" "}
+          <Link
+            href="/services/platform-migration/shopify-migration"
+            className="underline underline-offset-4"
+          >
+            Shopify migration
+          </Link>
+          , or{" "}
+          <Link
+            href="/services/platform-migration/b2b-platform-migration"
+            className="underline underline-offset-4"
+          >
+            B2B migration
+          </Link>
+          .
+        </p>
+      </section>
 
       <CTABar message="Not sure which ecommerce platform is right for your stack? Let’s map it out together." />
 

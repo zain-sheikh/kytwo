@@ -93,7 +93,7 @@ export default function EcommerceDesignPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Ecommerce Design",
+    name: "Ecommerce Design",
     provider: {
       "@type": "Organization",
       name: "Kytwo",

@@ -51,6 +51,14 @@ export default function Footer() {
           <div className="md:col-span-3">
             <h4 className="font-bold text-xl mb-6 ">SERVICES</h4>
             <ul className="space-y-3 text-gray-300 text-lg">
+              {/* <li>
+                <Link
+                  href="/blog"
+                  className="hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                >
+                  Blog
+                </Link>
+              </li> */}
               <li>
                 <Link
                   href="/voucher"

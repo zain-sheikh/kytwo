@@ -90,9 +90,11 @@ export default function Showcase() {
 
   useEffect(() => {
     if (firstLoad) {
-      setFirstLoad(false);
       const timer = setTimeout(() => go(1), 3000);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        setFirstLoad(false);
+      };
       return;
     }
     if (withTransition) return;

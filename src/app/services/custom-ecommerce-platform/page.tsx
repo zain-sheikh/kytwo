@@ -12,6 +12,7 @@ import CTABar from "@/components/CTABar";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { buildFaqSchema } from "@/lib/faqSchema";
 import RelatedServices from "@/components/RelatedServices";
+import Link from "next/link";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kytwo.com";
 
@@ -38,7 +39,12 @@ export const metadata: Metadata = {
     url: `${siteUrl}/services/custom-ecommerce-platform`,
     type: "website",
     images: [
-      { url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Kytwo — Custom Ecommerce Platform" },
+      {
+        url: `${siteUrl}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: "Kytwo — Custom Ecommerce Platform",
+      },
     ],
   },
   twitter: {
@@ -91,7 +97,7 @@ export default function CustomEcommercePlatformPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Custom Ecommerce Platform Development",
+    name: "Custom Ecommerce Platform Development",
     provider: {
       "@type": "Organization",
       name: "Kytwo",
@@ -182,6 +188,27 @@ export default function CustomEcommercePlatformPage() {
           "Revenue-critical stores where performance, SEO, security, and compliance matter",
         ]}
       />
+
+      <section className="container py-6">
+        <p className="text-gray-200 text-sm md:text-base max-w-3xl">
+          If you&apos;re moving from a legacy stack into custom/headless, we can
+          run an SEO-safe cutover via our{" "}
+          <Link
+            href="/services/platform-migration"
+            className="underline underline-offset-4"
+          >
+            ecommerce platform migration services
+          </Link>
+          . For complex account and pricing logic, see{" "}
+          <Link
+            href="/services/platform-migration/b2b-platform-migration"
+            className="underline underline-offset-4"
+          >
+            B2B platform migration
+          </Link>
+          .
+        </p>
+      </section>
 
       <ServiceOverview
         title="WHY BUILD A"
